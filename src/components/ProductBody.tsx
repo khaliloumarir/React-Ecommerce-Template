@@ -55,6 +55,7 @@ export default function ProductBody({
     "client-id":
       "AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon",
     currency: "USD",
+    intent: "capture",
   };
   return (
     <div className="flex justify-between sm:flex-row flex-col space-y-4">
@@ -68,12 +69,12 @@ export default function ProductBody({
         <h1 className="text-4xl font-bold text-header ">{productTitle}</h1>
 
         <section>
-          <p className="line-through text-[#424242]">{priceToCompare}$</p>
-          <p className="text-[#8A0000] font-medium">
+          <p className="line-through text-[#8A0000]">{priceToCompare}$</p>
+          {/* <p className="text-[#8A0000] font-medium">
             Sale could End any minute! Get your PDF Now before it is too late
-          </p>
+          </p> */}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (21 Sold){" "}
+            {productPrice}$ - In stock (21 Sold)
           </p>
         </section>
 
@@ -85,7 +86,7 @@ export default function ProductBody({
             }}
             className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold"
           >
-            Buy {productTitle} for {productPrice}
+            Get {productTitle} for {productPrice}$
           </button>
         ) : null}
         {/* ShowPaypal if set to true, then deferLoading is set to False to load Paypal SDK */}

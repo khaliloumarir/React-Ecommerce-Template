@@ -3,8 +3,9 @@ import Footer from "../components/Footer";
 import thankYouImage from "../assets/images/tky.webp";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebase-config";
-import { useEffect } from "react";
+
 import { useParams } from "react-router";
+import { useEffect } from "react";
 export default function ConfirmationPage() {
   let { product, downloadName, type } = useParams();
 

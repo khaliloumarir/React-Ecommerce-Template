@@ -34,7 +34,7 @@ function App() {
     <div className=" space-y-20">
       {/* Includes all the body details, this is where the user lands in */}
       <Header />
-      <section className="sm:px-8">
+      <section className="sm:px-8 px-4">
         <ProductBody
           downloadFile={asteriaDownload}
           productImage={asteriaBook}

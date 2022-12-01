@@ -98,20 +98,12 @@ const router = createBrowserRouter([
   },
   {
     path: "confirmation/:product/:downloadName/:type",
-    element: (
-      <ScrollToTop>
-        <ConfirmationPage />
-      </ScrollToTop>
-    ),
+    element: <ConfirmationPage />,
   },
-  {
-    path: "confirmation/:product",
-    element: (
-      <ScrollToTop>
-        <ConfirmationPage />
-      </ScrollToTop>
-    ),
-  },
+  // {
+  //   path: "confirmation/:product",
+  //   element: <ConfirmationPage />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
