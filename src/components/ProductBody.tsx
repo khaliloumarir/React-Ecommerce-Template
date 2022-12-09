@@ -9,6 +9,13 @@ import { Helmet } from "react-helmet";
 
 import { review, downloadDate } from "../interfaces";
 import { mainData } from "../data/mainData";
+
+declare global {
+  interface Window {
+    // ⚠️ notice that "Window" is capitalized here
+    gtag: any;
+  }
+}
 export default function ProductBody({
   productTitle,
   priceToCompare,
@@ -17,6 +24,7 @@ export default function ProductBody({
   reviews,
   productImage,
   downloadFile,
+  saleLine,
 }: {
   productTitle: string;
   priceToCompare: number;
@@ -25,6 +33,7 @@ export default function ProductBody({
   reviews: review[];
   productImage: string;
   downloadFile: downloadDate;
+  saleLine?: string;
 }) {
   const navigate = useNavigate();
   const timeoutRef: React.MutableRefObject<any> = useRef(null);
@@ -70,11 +79,11 @@ export default function ProductBody({
 
         <section>
           <p className="line-through text-[#8A0000]">{priceToCompare}$</p>
-          {/* <p className="text-[#8A0000] font-medium">
-            Sale could End any minute! Get your PDF Now before it is too late
-          </p> */}
+          {saleLine?.length && (
+            <p className="text-[#8A0000] font-medium">{saleLine}</p>
+          )}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (21 Sold)
+            {productPrice}$ - In stock (25 Sold)
           </p>
         </section>
 
@@ -109,8 +118,6 @@ export default function ProductBody({
             }}
             onApprove={(data, actions: any) => {
               return actions.order.capture().then((details: any) => {
-                const name = details.payer.name.given_name;
-                console.log(details.payer, "is the buyer");
                 navigate(
                   `/confirmation/${downloadFile.productName}/${downloadFile.downloadName}/${downloadFile.type}`
                 );

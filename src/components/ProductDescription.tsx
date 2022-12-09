@@ -136,7 +136,7 @@ export default function ProductDescription({
         <section className="space-y-10">
           <h1>Bundle & Save UP!</h1>
           <div className="flex justify-center flex-col sm:flex-row">
-            <img alt="Crochet Bundle" src={bundleImage} />
+            <img alt="Crochet Bundle" className="w-[400px]" src={bundleImage} />
             <ul className="text-left flex flex-col justify-between">
               <li>
                 <p>
@@ -144,7 +144,7 @@ export default function ProductDescription({
                     alt="video tutorials"
                     className="inline-block"
                     src={checkIcon}
-                  />{" "}
+                  />
                   Videos tutorials
                 </p>
               </li>
@@ -202,7 +202,7 @@ export default function ProductDescription({
           </div>
           <Link to="/bundle">
             <button className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold">
-              Buy Bundle for 15.99$
+              Christmas Sale on Bundle for 12.99$
             </button>
           </Link>
         </section>

@@ -3,7 +3,7 @@ export default function MainArgument({
   paragraph,
   title,
 }: {
-  children: JSX.Element;
+  children?: JSX.Element;
   paragraph: string;
   title: string;
 }) {
