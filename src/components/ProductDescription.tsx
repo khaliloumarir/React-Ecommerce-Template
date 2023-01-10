@@ -97,10 +97,11 @@ export default function ProductDescription({
           <h1>Our Pattern Reviews</h1>
           <p>See what our readers are saying.</p>
         </section>
-        <div className="grid sm:grid-cols-3 place-content-center gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 place-content-center gap-10 ">
           {reviews.map((review) => {
             return (
               <ReviewComponent
+                pdtImg={review.pdtImg}
                 key={review.userName}
                 img={review.image}
                 name={review.userName}

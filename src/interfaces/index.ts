@@ -2,6 +2,7 @@ interface review {
   userName: string;
   reviewMessage: string;
   image: string;
+  pdtImg: string;
 }
 interface downloadDate {
   productName: string;

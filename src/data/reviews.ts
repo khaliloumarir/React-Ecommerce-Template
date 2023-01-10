@@ -4,6 +4,9 @@ import asteria_two from "../assets/profiles/profile-2.webp";
 import asteria_three from "../assets/profiles/profile-3.webp";
 import asteria_four from "../assets/profiles/profile-4.webp";
 import asteria_five from "../assets/profiles/profile-5.webp";
+import asteria_img_review_1 from "../assets/images/asteria_pdtReview_1.webp";
+import asteria_img_review_2 from "../assets/images/asteria_pdtReview_2.webp";
+import asteria_img_review_3 from "../assets/images/asteria_pdtReview_3.webp";
 //Foliage
 import foliage_one from "../assets/foliage-profiles/profile-1.webp";
 import foliage_two from "../assets/foliage-profiles/profile-2.webp";
@@ -23,41 +26,42 @@ import fernanda_three from "../assets/fernanda-profiles/profile-3.webp";
 import fernanda_four from "../assets/fernanda-profiles/profile-4.webp";
 import fernanda_five from "../assets/fernanda-profiles/profile-5.webp";
 
-interface review {
-  userName: string;
-  reviewMessage: string;
-  image: string;
-}
+import { review } from "../interfaces";
 
 const asteriaReviews: review[] = [
   {
     userName: "Ana Walford",
     reviewMessage: "Great pattern, easy to follow and end result was lovely",
     image: asteria_one,
+    pdtImg: asteria_img_review_1,
   },
   {
     userName: "Caitlyn Jones",
     reviewMessage:
       "I absolutely love Asteria’s patterns. They are so well-written and utterly beautiful.",
     image: asteria_two,
+    pdtImg: asteria_img_review_2,
   },
   {
     userName: "Maria Fernanda",
     reviewMessage:
       "Beautiful pattern! Easy to follow and works up fairly quickly.",
     image: asteria_three,
+    pdtImg: "",
   },
   {
     userName: "Rosenda Williams",
     reviewMessage:
       "Just what I needed! Easy to follow pattern, with detailed instructions.... very nice!! Not the first time I've ordered from here, always pleased!",
     image: asteria_four,
+    pdtImg: "",
   },
   {
     userName: "Vienna Creech",
     reviewMessage:
       "It’s so easy to follow and I had really fun when I was crocheting ❣️ absolutely beautiful thank you!",
     image: asteria_five,
+    pdtImg: asteria_img_review_3,
   },
 ];
 const foliageReviews: review[] = [
@@ -66,28 +70,33 @@ const foliageReviews: review[] = [
     reviewMessage:
       "Instructions were easy to follow. The many popcorns were tedious but the doily turned out beautifully",
     image: foliage_one,
+    pdtImg: "",
   },
   {
     userName: "Rosemary Jedel Graff",
     reviewMessage:
       "Working on this beauty now Love but she is not done yet will post picture after she is finished.",
     image: foliage_two,
+    pdtImg: "",
   },
   {
     userName: "Janice Kerr Pickup",
     reviewMessage: "Very beautiful doily turned out.",
     image: foliage_three,
+    pdtImg: "",
   },
   {
     userName: "Rose Bonetto",
     reviewMessage:
       "Well written and easy to follow pattern. I'm currently making this doily and enjoying the progress along the way!",
     image: foliage_four,
+    pdtImg: "",
   },
   {
     userName: "Taylor Renee Kleckner",
     reviewMessage: "Beautiful pattern! Can't wait to make it! ",
     image: foliage_five,
+    pdtImg: "",
   },
 ];
 const lorienReviews: review[] = [
@@ -95,26 +104,31 @@ const lorienReviews: review[] = [
     userName: "Ginger Hall",
     reviewMessage: "Very Easy to follow along with!",
     image: lorien_one,
+    pdtImg: "",
   },
   {
     userName: "Kelsey Mindemann",
     reviewMessage: "Beautiful pattern! I have made it already",
     image: lorien_two,
+    pdtImg: "",
   },
   {
     userName: "Paula Hallman",
     reviewMessage: "Good easy pattern to follow, i love it ",
     image: lorien_three,
+    pdtImg: "",
   },
   {
     userName: "Tiffany Starnes",
     reviewMessage: "Great pattern, easy to follow and end result was lovely",
     image: lorien_four,
+    pdtImg: "",
   },
   {
     userName: "Vicky Patterson",
     reviewMessage: "This is not only a beautiful pattern, very well written!",
     image: lorien_five,
+    pdtImg: "",
   },
 ];
 const fernandaReviews: review[] = [
@@ -122,29 +136,34 @@ const fernandaReviews: review[] = [
     userName: "Amparo Ramirez Villanueva",
     reviewMessage: "Great pattern, easy to follow and end result was lovely",
     image: fernanda_one,
+    pdtImg: "",
   },
   {
     userName: "Anna Reyna",
     reviewMessage:
       "This is not only a beautiful design, but it’s very well written! Thank you!",
     image: fernanda_two,
+    pdtImg: "",
   },
   {
     userName: "Gabyy García",
     reviewMessage:
       "Beautiful pattern! I can't wait to make this lovely doily. Thank you :)",
     image: fernanda_three,
+    pdtImg: "",
   },
   {
     userName: "Helem Segura",
     reviewMessage: "excellent seller great pattern thank you",
     image: fernanda_four,
+    pdtImg: "",
   },
   {
     userName: "Maria Elsa Santa Cruz Padilla",
     reviewMessage:
       "Instructions were easy to follow. The many popcorns were tedious but the doily turned out beautifully.",
     image: fernanda_five,
+    pdtImg: "",
   },
 ];
 
