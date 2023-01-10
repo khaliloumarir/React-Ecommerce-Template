@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import {
+  PayPalScriptProvider,
+  PayPalButtons,
+  usePayPalScriptReducer,
+} from "@paypal/react-paypal-js";
 import circleFillIcon from "../assets/icons/circle-fill.svg";
 import ReviewBubble from "./ReviewBubble";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import spinner from "../assets/icons/arrow-repeat.svg";
 //data
 
 import { review, downloadDate } from "../interfaces";
@@ -26,6 +31,10 @@ export default function ProductBody({
   productImage: string;
   downloadFile: downloadDate;
 }) {
+  const [showPaypal, setShowPaypal]: [
+    boolean,
+    React.Dispatch<React.SetStateAction<boolean>>
+  ] = useState(false);
   const navigate = useNavigate();
   const timeoutRef: React.MutableRefObject<any> = useRef(null);
   function resetTimeout() {
@@ -37,10 +46,12 @@ export default function ProductBody({
     number,
     React.Dispatch<React.SetStateAction<number>>
   ] = useState(0);
-  const [showPaypal, setShowPaypal]: [
-    boolean,
-    React.Dispatch<React.SetStateAction<boolean>>
-  ] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowPaypal(true);
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
@@ -58,38 +69,50 @@ export default function ProductBody({
     intent: "capture",
   };
   return (
-    <div className="flex justify-between sm:flex-row flex-col space-y-4">
+    <div className="flex justify-between sm:flex-row flex-col space-y-4 md:space-x-4 lg:space-x-0">
       <Helmet>
         <title>{productTitle}</title>
         <meta name="description" content={productDescription} />
         <meta name="author" content={mainData.companyName} />
       </Helmet>
       {/* Product Details */}
+      <div>
+        <img
+          loading="lazy"
+          className="sm:basis-1/2"
+          src={productImage}
+          width="500px"
+          alt="book cover"
+        />
+      </div>
       <div className="sm:basis-1/2 sm:space-y-6 space-y-2">
         <h1 className="text-4xl font-bold text-header ">{productTitle}</h1>
-
         <section>
           <p className="line-through text-[#8A0000]">{priceToCompare}$</p>
           {/* <p className="text-[#8A0000] font-medium">
             Sale could End any minute! Get your PDF Now before it is too late
           </p> */}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (21 Sold)
+            {productPrice}$ - In stock (40 Sold)
           </p>
         </section>
 
         <p>{productDescription}</p>
         {showPaypal == false ? (
-          <button
-            onClick={() => {
-              setShowPaypal(!showPaypal);
-            }}
-            className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold"
-          >
-            Get {productTitle} for {productPrice}$
-          </button>
+          // <button
+          //   onClick={() => {
+          //     setShowPaypal(!showPaypal);
+          //   }}
+          //   className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold"
+          // >
+          //   Buy {productTitle} for {productPrice}$
+          // </button>
+          <div className="flex justify-center animate-spin ">
+            <img width="48px" src={spinner} />
+          </div>
         ) : null}
         {/* ShowPaypal if set to true, then deferLoading is set to False to load Paypal SDK */}
+        {/*  */}
         <PayPalScriptProvider
           deferLoading={!showPaypal}
           options={initialOptions}
@@ -127,6 +150,7 @@ export default function ProductBody({
           {new Array(3).fill("").map((data: string, index: number) => {
             return (
               <img
+                loading="lazy"
                 key={`image-${index}`}
                 alt={productTitle}
                 onClick={() => {
@@ -145,15 +169,6 @@ export default function ProductBody({
         {/* End -- Circle bubbles section */}
       </div>
       {/* Product Image */}
-      <div>
-        <img
-          loading="lazy"
-          className="sm:basis-1/2"
-          src={productImage}
-          width="500px"
-          alt="book cover"
-        />
-      </div>
     </div>
   );
 }

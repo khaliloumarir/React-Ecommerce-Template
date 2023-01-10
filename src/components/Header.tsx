@@ -13,6 +13,7 @@ export default function Header() {
       <nav className="flex justify-between items-center">
         <Link className="" to="/">
           <img
+            loading="lazy"
             alt={`${mainData.companyName} Logo Header`}
             width="80px"
             height="80px"

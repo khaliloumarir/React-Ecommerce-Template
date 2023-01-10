@@ -64,9 +64,27 @@ export default function ProductDescription({
         </section>
 
         <section className="flex lg:space-x-6 lg:flex-row flex-col justify-center items-center space-y-6 lg:space-y-0">
-          <img alt="showcase one" width="360px" height="360px" src={img1} />
-          <img alt="showcase two" width="360px" height="360px" src={img2} />
-          <img alt="showcase three" width="360px" height="360px" src={img3} />
+          <img
+            loading="lazy"
+            alt="showcase one"
+            width="360px"
+            height="360px"
+            src={img1}
+          />
+          <img
+            loading="lazy"
+            alt="showcase two"
+            width="360px"
+            height="360px"
+            src={img2}
+          />
+          <img
+            loading="lazy"
+            alt="showcase three"
+            width="360px"
+            height="360px"
+            src={img3}
+          />
         </section>
         {children}
       </section>
@@ -100,7 +118,12 @@ export default function ProductDescription({
       <div className="bg-gradient-to-b from-[#f6f8fc] to-[#FFFFFF] w-full py-16">
         <section className="grid sm:grid-cols-3 gap-y-6 ">
           <div className="flex flex-col items-center">
-            <img alt="reliable team" width="60px" src={reliableTeamIcon} />
+            <img
+              loading="lazy"
+              alt="reliable team"
+              width="60px"
+              src={reliableTeamIcon}
+            />
             <h3>Reliable & Creative Team</h3>
             <p>
               We make detailed books with a creative view to offer the best
@@ -109,6 +132,7 @@ export default function ProductDescription({
           </div>
           <div className="flex flex-col items-center">
             <img
+              loading="lazy"
               alt="great customer support"
               width="60px"
               src={customerSupportIcon}
@@ -121,6 +145,7 @@ export default function ProductDescription({
           </div>
           <div className="flex flex-col items-center">
             <img
+              loading="lazy"
               alt="Satisfaction is guaranteed"
               width="60px"
               src={satisfactionIcon}
@@ -136,11 +161,17 @@ export default function ProductDescription({
         <section className="space-y-10">
           <h1>Bundle & Save UP!</h1>
           <div className="flex justify-center flex-col sm:flex-row">
-            <img alt="Crochet Bundle" src={bundleImage} />
+            <img
+              loading="lazy"
+              alt="Crochet Bundle"
+              src={bundleImage}
+              width="400px"
+            />
             <ul className="text-left flex flex-col justify-between">
               <li>
                 <p>
                   <img
+                    loading="lazy"
                     alt="video tutorials"
                     className="inline-block"
                     src={checkIcon}
@@ -151,6 +182,7 @@ export default function ProductDescription({
               <li>
                 <p>
                   <img
+                    loading="lazy"
                     alt="Step-By-Step Instructions"
                     className="inline-block"
                     src={checkIcon}
@@ -161,6 +193,7 @@ export default function ProductDescription({
               <li>
                 <p>
                   <img
+                    loading="lazy"
                     alt="Asteria Crochet Pattern PDF"
                     className="inline-block"
                     src={checkIcon}
@@ -171,6 +204,7 @@ export default function ProductDescription({
               <li>
                 <p>
                   <img
+                    loading="lazy"
                     alt="Foliage Crochet Pattern PDF"
                     className="inline-block"
                     src={checkIcon}
@@ -181,6 +215,7 @@ export default function ProductDescription({
               <li>
                 <p>
                   <img
+                    loading="lazy"
                     alt="Lorien Crochet Pattern PDF"
                     className="inline-block"
                     src={checkIcon}
@@ -191,6 +226,7 @@ export default function ProductDescription({
               <li>
                 <p>
                   <img
+                    loading="lazy"
                     alt="Fernanda Crochet Pattern PDF"
                     className="inline-block"
                     src={checkIcon}
@@ -202,7 +238,7 @@ export default function ProductDescription({
           </div>
           <Link to="/bundle">
             <button className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold">
-              Buy Bundle for 15.99$
+              Buy Bundle for 12.99$
             </button>
           </Link>
         </section>
@@ -210,7 +246,12 @@ export default function ProductDescription({
       </div>
       <section className="">
         <section className="bg-[#f6f8fc] flex flex-col items-center  text-center w-full py-16">
-          <img alt={`${mainData.companyName} logo`} src={Logo} width="200px" />
+          <img
+            loading="lazy"
+            alt={`${mainData.companyName} logo`}
+            src={Logo}
+            width="200px"
+          />
           <h1 className="text-greenColor">About us</h1>
           <p className="max-w-[900px]">{mainData.aboutUsGeneral}</p>
         </section>

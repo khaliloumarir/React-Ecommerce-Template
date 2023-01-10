@@ -12,7 +12,7 @@ const mainData: {
   companyName: "MarionWares",
   email: "sellaprod.contact@gmail.com",
   workTime: "Monday to Friday: 9:00AM-6:00PM",
-  phone: "+212 6 84 99 04 91",
+  phone: " ",
   address: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
   aboutUs:
     "From lifestyle to 101s, we got everything you’ll wanna know in one place Marion Wares Crochet",

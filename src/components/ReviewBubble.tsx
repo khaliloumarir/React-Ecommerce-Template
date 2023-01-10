@@ -7,6 +7,7 @@ export default function ReviewBubble({ review }: { review: review }) {
       </section>
       <section className="flex items-center space-x-4">
         <img
+          loading="lazy"
           alt={`${review.userName}`}
           width="50px"
           height="50px"

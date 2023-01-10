@@ -25,6 +25,11 @@ const bundleDownload: downloadDate = {
     "Marion Wares - Bundle of Asteria & Fernanda & Foliage & Lorien",
   type: "zip",
 };
+const asteriaDeal: downloadDate = {
+  productName: "Asteria And Foliage",
+  downloadName: "Marion Wares Asteria And Foliage pattern",
+  type: "zip",
+};
 
 export {
   fernandaDownload,
@@ -32,4 +37,5 @@ export {
   foliageDownload,
   lorienDownload,
   bundleDownload,
+  asteriaDeal,
 };

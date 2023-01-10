@@ -39,7 +39,7 @@ export default function Foliage() {
           reviews={foliageReviews}
           productTitle="Foliage Crochet Pattern PDF"
           priceToCompare={9.99}
-          productPrice={7.99}
+          productPrice={5.99}
           productDescription="The Foliage pattern is a very beautiful and easy crochet pattern. that will serve not as just a cute gift or as a pleasant decoration for your home. but as family heirloom to give to be cherished by your kids and there kids to come! "
         />
         <ProductDescription
