@@ -30,6 +30,11 @@ const asteriaDeal: downloadDate = {
   downloadName: "Marion Wares Asteria And Foliage pattern",
   type: "zip",
 };
+const asteriaAndUltiaDownload: downloadDate = {
+  productName: "Asteria And Ultia",
+  downloadName: "Marion Wares Asteria And Ultia Pattern",
+  type: "zip",
+};
 
 export {
   fernandaDownload,
@@ -38,4 +43,5 @@ export {
   lorienDownload,
   bundleDownload,
   asteriaDeal,
+  asteriaAndUltiaDownload,
 };

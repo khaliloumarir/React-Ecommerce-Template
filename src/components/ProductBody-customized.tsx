@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import spinner from "../assets/icons/arrow-repeat.svg";
 //data
+import AlertDialogSlide from "./Alert-Dialog";
 
 import { review, downloadDate } from "../interfaces";
 import { mainData } from "../data/mainData";
@@ -63,6 +64,7 @@ export default function ProductBody({
       resetTimeout();
     };
   }, [reviewBubble]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const initialOptions = {
     "client-id":
@@ -95,9 +97,11 @@ export default function ProductBody({
             Sale could End any minute! Get your PDF Now before it is too late
           </p> */}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (57 Sold)
+            {productPrice}$ - In stock (2 Sold)
           </p>
         </section>
+
+        {isOpen && <AlertDialogSlide open={isOpen} setOpen={setIsOpen} />}
 
         <p>{productDescription}</p>
         {showPaypal == false ? (
@@ -135,10 +139,7 @@ export default function ProductBody({
             onApprove={(data, actions: any) => {
               return actions.order.capture().then((details: any) => {
                 const name = details.payer.name.given_name;
-                console.log(details.payer, "is the buyer");
-                navigate(
-                  `/confirmation/${downloadFile.productName}/${downloadFile.downloadName}/${downloadFile.type}`
-                );
+                setIsOpen(true);
               });
             }}
             style={{ layout: "vertical" }}

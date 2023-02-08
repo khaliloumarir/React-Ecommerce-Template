@@ -8,9 +8,9 @@ export default function RightArgument({
   productArguments: { title: string; description: string }[];
 }) {
   return (
-    <div className="flex flex-col sm:flex-row space-x-8 justify-center items-center text-left sm:w-[80%] ">
+    <div className="flex flex-col sm:flex-row space-x-8   justify-center items-center text-left sm:w-[80%] ">
       {children}
-      <section className="sm:basis-1/2 flex flex-col sm:justify-between">
+      <section className="sm:basis-1/2 flex flex-col  sm:justify-between">
         <h2>{title}</h2>
         {productArguments.map((argument, index) => {
           return (

@@ -14,6 +14,8 @@ import Lorien from "./routes/Lorien";
 import Fernanda from "./routes/Fernanda";
 import Bundle from "./routes/Bundle";
 import ScrollToTop from "./components/ScrollToTop";
+import Patterns from "./routes/Patterns";
+import Mermaid from "./routes/Mermaid";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +87,22 @@ const router = createBrowserRouter([
     element: (
       <ScrollToTop>
         <TermsOfService />
+      </ScrollToTop>
+    ),
+  },
+  {
+    path: "patterns",
+    element: (
+      <ScrollToTop>
+        <Patterns />
+      </ScrollToTop>
+    ),
+  },
+  {
+    path: "merbabies",
+    element: (
+      <ScrollToTop>
+        <Mermaid />
       </ScrollToTop>
     ),
   },

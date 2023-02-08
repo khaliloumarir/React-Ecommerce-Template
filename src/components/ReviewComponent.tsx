@@ -14,6 +14,7 @@ export default function ReviewComponent({
       <p>"{review}"</p>
       {pdtImg.length > 0 && (
         <img
+          alt={`Asteria Crochet made by user ${name}`}
           loading="lazy"
           src={pdtImg}
           className="max-w-[300px] rounded-md "

@@ -35,9 +35,15 @@ export default function ConfirmationPage() {
           >
             Download {product} Crochet Pattern
           </button>
+          <span className="text-md max-w-[500px]">
+            Please Contact us at{" "}
+            <b className="text-blue-600">sellaprod.contact@gmail.com</b> if you
+            are having difficulties downloading the pdfs
+          </span>
         </section>
         <img width="500px" src={thankYouImage} />
       </div>
+
       <Footer />
     </>
   );

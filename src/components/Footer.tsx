@@ -57,12 +57,12 @@ export default function Footer() {
           </li>
         </ul>
       </section>
-      <section>
+      {/* <section>
         <h3 className="text-2xl">Follow Us</h3>
         <a href="www.twitter.com">
           <p>Twitter: {mainData.twitter}</p>
         </a>
-      </section>
+      </section> */}
     </div>
   );
 }

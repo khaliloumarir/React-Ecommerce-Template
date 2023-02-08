@@ -2,34 +2,37 @@ import Header from "./components/Header";
 import ProductBody from "./components/ProductBody";
 import ProductDescription from "./components/ProductDescription";
 import { asteriaReviews } from "./data/reviews";
-import asteriaBook from "./assets/images/asteria-book.webp";
+// import asteriaBook from "./assets/images/asteria-book.webp";
+import asteriaAndUltia from "./assets/images/Asteria+Ulita.webp";
 import img1 from "./assets/images/arg-list-1.webp";
 import img2 from "./assets/images/arg-list-2.webp";
 import img3 from "./assets/images/arg-list-3.webp";
+// import img4 from "./assets/images/asteria_carousel_1.webp";
+// import img5 from "./assets/images/asteria_carousel_2.webp";
+// import img6 from "./assets/images/asteria_carousel_3.webp";
 import MainArgument from "./components/product-description-components/MainArgument";
 import RightArgument from "./components/product-description-components/RightArgument";
 import video1 from "./assets/videos/opopop_480x480.mp4";
 import video2 from "./assets/videos/700kib_480x480.mp4";
-import { asteriaDeal } from "./data/downloadData";
-import React, { useState, useEffect } from "react";
+import { asteriaAndUltiaDownload } from "./data/downloadData";
 
 function App() {
-  const [seconds, setSeconds] = useState(0);
+  // const [seconds, setSeconds] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const currentTimestamp = Math.floor(Date.now() / 1000);
-      const targetTimestamp = Math.floor(
-        new Date("2023-01-15").getTime() / 1000
-      );
-      setSeconds(targetTimestamp - currentTimestamp);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-  const days = Math.floor(seconds / 86400);
-  const hours = Math.floor((seconds % 86400) / 3600);
-  const minutes = Math.floor((seconds % 3600) / 60);
-  const remainingSeconds = seconds % 60;
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const currentTimestamp = Math.floor(Date.now() / 1000);
+  //     const targetTimestamp = Math.floor(
+  //       new Date("2023-01-15").getTime() / 1000
+  //     );
+  //     setSeconds(targetTimestamp - currentTimestamp);
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
+  // const days = Math.floor(seconds / 86400);
+  // const hours = Math.floor((seconds % 86400) / 3600);
+  // const minutes = Math.floor((seconds % 3600) / 60);
+  // const remainingSeconds = seconds % 60;
 
   const argumentOne: { title: string; description: string }[] = [
     {
@@ -52,7 +55,7 @@ function App() {
     <div className=" space-y-20">
       {/* Includes all the body details, this is where the user lands in */}
       <Header />
-      <div className="text-center bg-red-600 py-8">
+      {/* <div className="text-center bg-red-600 py-8">
         <p className="text-4xl text-white">
           Buy Asteria & Get Foliage for Free.
         </p>
@@ -60,13 +63,14 @@ function App() {
           Offer Ends in {days} days, {hours} hours, {minutes} minutes,{" "}
           {remainingSeconds} seconds left
         </p>
-      </div>
+      </div> */}
       <section className="sm:px-8 px-4">
         <ProductBody
-          downloadFile={asteriaDeal}
-          productImage={asteriaBook}
+          downloadFile={asteriaAndUltiaDownload}
+          productImage={asteriaAndUltia}
           reviews={asteriaReviews}
-          productTitle="Asteria Crochet Pattern PDF"
+          // productImages={[img6, img2, img3, img4, img5]}
+          productTitle="Asteria Crochet Pattern PDF + Ultia Pattern Gifted"
           priceToCompare={9.99}
           productPrice={5.99}
           productDescription="the Asteria pattern is a very beautiful and easy crochet pattern. that will serve not as just a cute gift or as a pleasant decoration for your home. but as family heirloom to give to be cherished by your kids and there kids to come!"

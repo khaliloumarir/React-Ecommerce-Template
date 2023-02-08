@@ -26,6 +26,13 @@ import fernanda_three from "../assets/fernanda-profiles/profile-3.webp";
 import fernanda_four from "../assets/fernanda-profiles/profile-4.webp";
 import fernanda_five from "../assets/fernanda-profiles/profile-5.webp";
 
+//mermaids
+import mermaids_one from "../assets/mermaids-profiles/Bebiana Guerra.webp";
+import mermaids_two from "../assets/mermaids-profiles/Brittany Myers.webp";
+import mermaids_three from "../assets/mermaids-profiles/Christina Cheatham.webp";
+import mermaids_four from "../assets/mermaids-profiles/Joceline Calderon.webp";
+import mermaids_five from "../assets/mermaids-profiles/Mallory Earle.webp";
+
 import { review } from "../interfaces";
 
 const asteriaReviews: review[] = [
@@ -166,5 +173,46 @@ const fernandaReviews: review[] = [
     pdtImg: "",
   },
 ];
+const mermaidReviews: review[] = [
+  {
+    userName: "Bebiana Guerra",
+    reviewMessage:
+      "I just purchased this today and made it! She came out so lovely!",
+    image: mermaids_one,
+    pdtImg: "",
+  },
+  {
+    userName: "Brittany Myers",
+    reviewMessage: "Love this pattern!!",
+    image: mermaids_two,
+    pdtImg: "",
+  },
+  {
+    userName: "Christina Cheatham",
+    reviewMessage:
+      "Amazing pattern. Minimal sewing and comes together like magic",
+    image: mermaids_three,
+    pdtImg: "",
+  },
+  {
+    userName: "Joceline Calderon",
+    reviewMessage: "What a quick and beautiful pattern! And so customizable!",
+    image: mermaids_four,
+    pdtImg: "",
+  },
+  {
+    userName: "Mallory Earle",
+    reviewMessage:
+      "This pattern's steps are all distinct and comprehensive. If you're doing things correctly, there's no room for mistake!This pattern is well worth buying because there are variations for the fin, hair, and accessories. ",
+    image: mermaids_five,
+    pdtImg: "",
+  },
+];
 
-export { asteriaReviews, foliageReviews, lorienReviews, fernandaReviews };
+export {
+  asteriaReviews,
+  foliageReviews,
+  lorienReviews,
+  fernandaReviews,
+  mermaidReviews,
+};

@@ -4,6 +4,10 @@ const pagesRouting: { url: string; destination: string }[] = [
     destination: "Asteria",
   },
   {
+    url: "/merbabies",
+    destination: "Merbabies",
+  },
+  {
     url: "/foliage",
     destination: "Foliage",
   },
@@ -14,10 +18,6 @@ const pagesRouting: { url: string; destination: string }[] = [
   {
     url: "/fernanda",
     destination: "Fernanda",
-  },
-  {
-    url: "/contact-us",
-    destination: "Contact Us",
   },
 ];
 
