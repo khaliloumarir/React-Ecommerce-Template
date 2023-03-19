@@ -8,16 +8,16 @@ const pagesRouting: { url: string; destination: string }[] = [
     destination: "Merbabies",
   },
   {
-    url: "/foliage",
-    destination: "Foliage",
+    url: "/crochet-dog-sweater-pattern",
+    destination: "Dog Pattern",
   },
   {
     url: "/lorien",
     destination: "Lorien",
   },
   {
-    url: "/fernanda",
-    destination: "Fernanda",
+    url: "/blog/asteria-crochet-pattern",
+    destination: "Blog",
   },
 ];
 

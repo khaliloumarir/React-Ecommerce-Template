@@ -7,9 +7,10 @@ import {
 } from "@paypal/react-paypal-js";
 import circleFillIcon from "../assets/icons/circle-fill.svg";
 import ReviewBubble from "./ReviewBubble";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import spinner from "../assets/icons/arrow-repeat.svg";
+import PositionedSnackbar from "./SnackBar";
 //data
 
 import { review, downloadDate } from "../interfaces";
@@ -44,11 +45,22 @@ export default function ProductBody({
       clearTimeout(timeoutRef.current);
     }
   }
+
   const [reviewBubble, setReviewBubble]: [
     number,
     React.Dispatch<React.SetStateAction<number>>
   ] = useState(0);
-
+  const [openBundle, setOpenBundle] = useState(true);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/bundle") {
+      console.log("Route is /bundle");
+      setOpenBundle(false);
+    } else {
+      console.log("Route is not /bundle");
+      setOpenBundle(true);
+    }
+  }, [location]);
   useEffect(() => {
     setTimeout(() => {
       setShowPaypal(true);
@@ -63,7 +75,8 @@ export default function ProductBody({
       resetTimeout();
     };
   }, [reviewBubble]);
-
+  //AUasW91YfQIZDvWONOkRjMBFR99cR9F9lqK1mbHnstD_RIMUhT4_K2csZ2SxNta4dsEmXn7I9rQ3bpfQ
+  //AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon
   const initialOptions = {
     "client-id":
       "AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon",
@@ -95,7 +108,7 @@ export default function ProductBody({
             Sale could End any minute! Get your PDF Now before it is too late
           </p> */}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (57 Sold)
+            {productPrice}$ - In stock (88 Sold)
           </p>
         </section>
 
@@ -170,6 +183,7 @@ export default function ProductBody({
         </section>
         {/* End -- Circle bubbles section */}
       </div>
+      <PositionedSnackbar setOpen={setOpenBundle} open={openBundle} />
       {/* Product Image */}
     </div>
   );

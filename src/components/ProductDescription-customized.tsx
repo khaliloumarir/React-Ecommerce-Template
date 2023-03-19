@@ -124,7 +124,7 @@ export default function ProductDescription({
               width="60px"
               src={reliableTeamIcon}
             />
-            <h3>Reliable & Creative Team</h3>
+            <h2 className="text-2xl">Reliable & Creative Team</h2>
             <p>
               We make detailed books with a creative view to offer the best
               experience and instructions to our customers
@@ -137,7 +137,7 @@ export default function ProductDescription({
               width="60px"
               src={customerSupportIcon}
             />
-            <h3>24/7 Customer Support</h3>
+            <h2 className="text-2xl">24/7 Customer Support</h2>
             <p>
               Our friendly team is here to help & answer any questions you may
               have
@@ -150,7 +150,7 @@ export default function ProductDescription({
               width="60px"
               src={satisfactionIcon}
             />
-            <h3>Satisfaction Guaranteed</h3>
+            <h2 className="text-2xl">Satisfaction Guaranteed</h2>
             <p>
               We stand by our high quality products & your satisfaction is
               guaranteed

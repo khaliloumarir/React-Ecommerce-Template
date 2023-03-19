@@ -20,7 +20,7 @@ export default function ImportantSection({
               className="flex flex-col items-center"
             >
               <img alt={argument.title} width="60px" src={argument.icon} />
-              <h3>{argument.title}</h3>
+              <h2 className="text-2xl">{argument.title}</h2>
               <p>{argument.description}</p>
             </section>
           );

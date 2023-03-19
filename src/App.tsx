@@ -89,7 +89,7 @@ function App() {
         intimidated by the complex patterns that you see on the internet? with
         this Step by step guide you´ll find yourself creating patterns of a
         professional level! We will be going step by step through this cute
-        crochet pattern with clear photos and instructions that will teach you
+        crochet pattern with clear instructions that will teach you
         the basics of this stunning pattern!"
             >
               <video className="" autoPlay loop muted playsInline>

@@ -29,7 +29,7 @@ export default function Header() {
         >
           <div>
             <div className="dropdown relative">
-              <a
+              <button
                 className="
           dropdown-toggle
           px-4
@@ -52,11 +52,11 @@ export default function Header() {
           items-center
           whitespace-nowrap
         "
-                href="#"
                 type="button"
                 id="dropdownMenuButton2"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                aria-label="Navigation-Button"
               >
                 <svg
                   onClick={() => {
@@ -73,7 +73,7 @@ export default function Header() {
                     d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
                   />
                 </svg>
-              </a>
+              </button>
               <ul
                 className={`
                 ${isNavBarOpen ? "block" : "hidden"} dropdown-menu

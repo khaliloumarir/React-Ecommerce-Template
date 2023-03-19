@@ -52,7 +52,10 @@ export default function Mermaid() {
               title="Get Hooked on the Adorable Merbabies Amigurumi Pattern"
               paragraph="The Merbabies Amigurumi Pattern provides detailed instructions and step-by-step photos to help guide you through the process of creating your own mermaid baby. The pattern includes instructions for making the mermaid's tail, fins, and crown, as well as all of the necessary details to make your mermaid look as realistic as possible. The pattern also includes tips and tricks for stuffing and shaping your amigurumi, so you can be confident in your finished product.  "
             >
-              <img src={foliageMain} />
+              <img
+                alt="Merbabies Amigurumi crochet purple color"
+                src={foliageMain}
+              />
             </MainArgument>
             {/* <RightArgument
               title="This pattern is perfect for those:"
@@ -64,7 +67,10 @@ export default function Mermaid() {
               title="Step-by-Step Guide to Crafting the Perfect Merbabies Amigurumi"
               paragraph="The Merbabies Amigurumi Pattern provides detailed instructions and step-by-step photos to help guide you through the process of creating your own mermaid baby. The pattern includes instructions for making the mermaid's tail, fins, and crown, as well as all of the necessary details to make your mermaid look as realistic as possible. The pattern also includes tips and tricks for stuffing and shaping your amigurumi, so you can be confident in your finished product.  "
             >
-              <img src={foliageMain2} />
+              <img
+                alt="Merbabies Amigurumi crochet Pink color"
+                src={foliageMain2}
+              />
             </MainArgument>
           </section>
         </ProductDescription>

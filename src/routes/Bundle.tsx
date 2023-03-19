@@ -13,11 +13,11 @@ export default function Bundle() {
     <div className=" space-y-20">
       {/* Includes all the body details, this is where the user lands in */}
       <Header />
-      <div className="text-center bg-red-600 py-8">
+      {/* <div className="text-center bg-red-600 py-8">
         <p className="text-4xl text-white">
           New year's Deal, Save -14.99$ On Bundle
         </p>
-      </div>
+      </div> */}
       <section className="sm:px-8">
         <ProductBody
           downloadFile={bundleDownload}

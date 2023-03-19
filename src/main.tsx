@@ -16,6 +16,9 @@ import Bundle from "./routes/Bundle";
 import ScrollToTop from "./components/ScrollToTop";
 import Patterns from "./routes/Patterns";
 import Mermaid from "./routes/Mermaid";
+import Blog from "./routes/Blog";
+import DogPattern from "./routes/DogPattern";
+import { ErrorPage } from "./routes/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -116,7 +119,35 @@ const router = createBrowserRouter([
   },
   {
     path: "confirmation/:product/:downloadName/:type",
-    element: <ConfirmationPage />,
+    element: (
+      <ScrollToTop>
+        <ConfirmationPage />
+      </ScrollToTop>
+    ),
+  },
+  {
+    path: "blog/asteria-crochet-pattern",
+    element: (
+      <ScrollToTop>
+        <Blog />
+      </ScrollToTop>
+    ),
+  },
+  {
+    path: "crochet-dog-sweater-pattern",
+    element: (
+      <ScrollToTop>
+        <DogPattern />
+      </ScrollToTop>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <ScrollToTop>
+        <ErrorPage />
+      </ScrollToTop>
+    ),
   },
   // {
   //   path: "confirmation/:product",
