@@ -4,7 +4,7 @@ import ProductDescription from "../components/ProductDescription";
 import lorienBook from "../assets/images/Book-Bundle-1.webp";
 import { asteriaReviews } from "../data/reviews";
 import img1 from "../assets/images/arg-list-2.webp";
-import img2 from "../assets/images/lorien-2.webp";
+import img2 from "../assets/images/Lorien-2.webp";
 import img3 from "../assets/images/foliage-3.webp";
 import { bundleDownload } from "../data/downloadData";
 
