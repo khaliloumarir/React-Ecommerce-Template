@@ -108,7 +108,7 @@ export default function ProductBody({
             Sale could End any minute! Get your PDF Now before it is too late
           </p> */}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (104 Sold)
+            {productPrice}$ - In stock (109 Sold)
           </p>
         </section>
 
