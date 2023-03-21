@@ -14,11 +14,11 @@ import foliage_three from "../assets/foliage-profiles/profile-3.webp";
 import foliage_four from "../assets/foliage-profiles/profile-4.webp";
 import foliage_five from "../assets/foliage-profiles/profile-5.webp";
 // Lorien
-import lorien_one from "../assets/lorien-profiles/profile-1.webp";
-import lorien_two from "../assets/lorien-profiles/profile-2.webp";
-import lorien_three from "../assets/lorien-profiles/profile-3.webp";
-import lorien_four from "../assets/lorien-profiles/profile-4.webp";
-import lorien_five from "../assets/lorien-profiles/profile-5.webp";
+import lorien_one from "../assets/Lorien-profiles/profile-1.webp";
+import lorien_two from "../assets/Lorien-profiles/profile-2.webp";
+import lorien_three from "../assets/Lorien-profiles/profile-3.webp";
+import lorien_four from "../assets/Lorien-profiles/profile-4.webp";
+import lorien_five from "../assets/Lorien-profiles/profile-5.webp";
 //Fernanda
 import fernanda_one from "../assets/fernanda-profiles/profile-1.webp";
 import fernanda_two from "../assets/fernanda-profiles/profile-2.webp";
