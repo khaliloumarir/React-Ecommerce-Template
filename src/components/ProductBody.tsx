@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import { auth } from "../firebase-config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import {
   PayPalScriptProvider,
   PayPalButtons,
@@ -79,7 +80,7 @@ export default function ProductBody({
   //AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon
   const initialOptions = {
     "client-id":
-      "AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon",
+      "AUasW91YfQIZDvWONOkRjMBFR99cR9F9lqK1mbHnstD_RIMUhT4_K2csZ2SxNta4dsEmXn7I9rQ3bpfQ",
     currency: "USD",
     intent: "capture",
   };
@@ -96,7 +97,8 @@ export default function ProductBody({
           loading="lazy"
           className="sm:basis-1/2"
           src={productImage}
-          width="500px"
+          width={500}
+          height={388}
           alt="book cover"
         />
       </div>
@@ -113,51 +115,60 @@ export default function ProductBody({
         </section>
 
         <p>{productDescription}</p>
-        {showPaypal == false ? (
-          // <button
-          //   onClick={() => {
-          //     setShowPaypal(!showPaypal);
-          //   }}
-          //   className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold"
-          // >
-          //   Buy {productTitle} for {productPrice}$
-          // </button>
-          <div className="flex justify-center animate-spin ">
-            <img width="48px" src={spinner} />
-          </div>
-        ) : null}
-        {/* ShowPaypal if set to true, then deferLoading is set to False to load Paypal SDK */}
-        {/*  */}
-        <PayPalScriptProvider
-          deferLoading={!showPaypal}
-          options={initialOptions}
-        >
-          <PayPalButtons
-            createOrder={(data, actions) => {
-              return actions.order.create({
-                purchase_units: [
-                  {
-                    amount: {
-                      value: `${productPrice}`,
-                    },
-                    description: productTitle,
-                  },
-                ],
-              });
-            }}
-            onApprove={(data, actions: any) => {
-              return actions.order.capture().then((details: any) => {
-                const name = details.payer.name.given_name;
-                console.log(details.payer, "is the buyer");
-                navigate(
-                  `/confirmation/${downloadFile.productName}/${downloadFile.downloadName}/${downloadFile.type}`
-                );
-              });
-            }}
-            style={{ layout: "vertical" }}
-          />
-        </PayPalScriptProvider>
+        <div className="min-h-[180px] ">
+          {showPaypal == false ? (
+            // <button
+            //   onClick={() => {
+            //     setShowPaypal(!showPaypal);
+            //   }}
+            //   className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold"
+            // >
+            //   Buy {productTitle} for {productPrice}$
+            // </button>
+            <div className="flex justify-center ">
+              <img className="animate-spin" width="48px" src={spinner} />
+            </div>
+          ) : null}
 
+          {/* ShowPaypal if set to true, then deferLoading is set to False to load Paypal SDK */}
+          {/*  */}
+          <PayPalScriptProvider
+            deferLoading={!showPaypal}
+            options={initialOptions}
+          >
+            <PayPalButtons
+              createOrder={(data, actions) => {
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        value: `${productPrice}`,
+                      },
+                      description: productTitle,
+                    },
+                  ],
+                });
+              }}
+              onApprove={(data, actions: any) => {
+                return actions.order.capture().then((details: any) => {
+                  const name = details.payer.name.given_name;
+                  const lastName = details.payer.name.surname;
+                  console.log(details.payer, "is the buyer");
+                  const password = name + lastName;
+                  createUserWithEmailAndPassword(
+                    auth,
+                    details.payer.email_address,
+                    password
+                  );
+                  navigate(
+                    `/confirmation/${downloadFile.productName}/${downloadFile.downloadName}/${downloadFile.type}`
+                  );
+                });
+              }}
+              style={{ layout: "vertical" }}
+            />
+          </PayPalScriptProvider>
+        </div>
         <ReviewBubble review={reviews[reviewBubble]} />
 
         {/* Circle bubbles section */}

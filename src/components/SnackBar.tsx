@@ -56,6 +56,8 @@ export default function PositionedSnackbar({
               loading="lazy"
               alt="bundle offer for 12.99$"
               className=" w-[100px]"
+              width={100}
+              height={65}
               src={bundle}
             />
             <p className="text-sm text-white">4 patterns for 12.99$</p>

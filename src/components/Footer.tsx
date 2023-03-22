@@ -9,6 +9,7 @@ export default function Footer() {
           alt={`Footer ${mainData.companyName} Logo`}
           src={Logo}
           width="150px"
+          height="75px"
         />
         <p>{mainData.aboutUs}</p>
       </section>

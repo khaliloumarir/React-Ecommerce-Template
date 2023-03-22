@@ -19,6 +19,8 @@ import Mermaid from "./routes/Mermaid";
 import Blog from "./routes/Blog";
 import DogPattern from "./routes/DogPattern";
 import { ErrorPage } from "./routes/ErrorPage";
+import SignIn from "./routes/Signin";
+import VideosPage from "./components/VideosPage";
 
 const router = createBrowserRouter([
   {
@@ -141,6 +143,23 @@ const router = createBrowserRouter([
       </ScrollToTop>
     ),
   },
+  // {
+  //   path: "sign-in",
+  //   element: (
+  //     <ScrollToTop>
+  //       <SignIn />
+  //     </ScrollToTop>
+  //   ),
+  // },
+
+  // {
+  //   path: "videos",
+  //   element: (
+  //     <ScrollToTop>
+  //       <VideosPage />
+  //     </ScrollToTop>
+  //   ),
+  // },
   {
     path: "*",
     element: (

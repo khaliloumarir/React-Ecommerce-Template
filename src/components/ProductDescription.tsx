@@ -123,6 +123,7 @@ export default function ProductDescription({
               loading="lazy"
               alt="reliable team"
               width="60px"
+              height="60px"
               src={reliableTeamIcon}
             />
             <h3>Reliable & Creative Team</h3>
@@ -136,6 +137,7 @@ export default function ProductDescription({
               loading="lazy"
               alt="great customer support"
               width="60px"
+              height="60px"
               src={customerSupportIcon}
             />
             <h3>24/7 Customer Support</h3>
@@ -149,6 +151,7 @@ export default function ProductDescription({
               loading="lazy"
               alt="Satisfaction is guaranteed"
               width="60px"
+              height="60px"
               src={satisfactionIcon}
             />
             <h3>Satisfaction Guaranteed</h3>
@@ -167,6 +170,7 @@ export default function ProductDescription({
               alt="Crochet Bundle"
               src={bundleImage}
               width="400px"
+              height="254px"
             />
             <ul className="text-left flex flex-col justify-between">
               <li>
@@ -252,6 +256,7 @@ export default function ProductDescription({
             alt={`${mainData.companyName} logo`}
             src={Logo}
             width="200px"
+            height="100px"
           />
           <h1 className="text-greenColor">About us</h1>
           <p className="max-w-[900px]">{mainData.aboutUsGeneral}</p>

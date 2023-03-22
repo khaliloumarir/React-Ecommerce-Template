@@ -21,7 +21,7 @@ export default function ReviewComponent({
         />
       )}
       <section className="flex justify-center items-center space-x-2">
-        <img alt={`${name} icon`} width="60px" src={img} />
+        <img alt={`${name} icon`} height="60px" width="60px" src={img} />
         <p>{name}</p>
       </section>
     </div>
