@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../firebase-config";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { Link, redirect, useNavigate } from "react-router-dom";
+import logo from "../assets/images/site-logo.svg";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { mainData } from "../data/mainData";
+import { UserAuth } from "../auth/AuthContext";
 export default function SignIn() {
+  const { signIn } = UserAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authUser, setAuthUser]: any = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user: any) => {
       if (user) {
@@ -18,113 +26,86 @@ export default function SignIn() {
       listen();
     };
   }, []);
-  const signIn = (event: React.FormEvent<HTMLFormElement>) => {
+  const signInForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredentials) => console.log(userCredentials))
-      .catch((err) => {
-        console.log(err);
-      });
+    await signIn(email, password);
+    window.location.reload();
   };
   return (
-    <div>
-      {authUser ? (
-        <>
-          <p>{`Signed In as ${authUser.email}`}</p>
-        </>
-      ) : (
-        <p>Signed Out</p>
-      )}
-
-      <body className="antialiased bg-gradient-to-br from-green-100 to-white">
-        <div className="container px-6 mx-auto">
-          <div className="flex flex-col text-center md:text-left md:flex-row h-screen justify-evenly md:items-center">
-            <div className="flex flex-col w-full">
+    <section className="bg-gray-50 dark:bg-gray-900">
+      <Header />
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <Link className="py-4" to="/">
+          <img
+            loading="lazy"
+            alt={`${mainData.companyName} Logo Header`}
+            width="200px"
+            height="200px"
+            className="logo-icon me-2 "
+            src={logo}
+          />
+        </Link>
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              Sign in to your account
+            </h1>
+            <form onSubmit={signInForm} className="space-y-4 md:space-y-6">
               <div>
-                <svg
-                  className="w-20 h-20 mx-auto md:float-left fill-stroke text-gray-800"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                  ></path>
-                </svg>
+                  Your email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Email associated to your paypal"
+                />
               </div>
-              <h1 className="text-5xl text-gray-800 font-bold">Client Area</h1>
-              <p className="w-5/12 mx-auto md:mx-0 text-gray-500">
-                Control and monitorize your website data from dashboard.
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Password
+                </label>
+                <input
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full text-white bg-greenColor hover:bg-greenColor focus:ring-4 focus:outline-none focus:ring-greenColor font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-greenColor dark:hover:bg-greenColor dark:focus:ring-greenColor"
+              >
+                Sign in
+              </button>
+              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                Don’t have an account yet?{" "}
+                <a
+                  href="#"
+                  className="font-medium text-greenColor hover:underline dark:text-greenColor"
+                >
+                  Buy PDF And Join automatically!
+                </a>
               </p>
-            </div>
-            <div className="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
-              <div className="bg-white p-10 flex flex-col w-full shadow-xl rounded-xl">
-                <h2 className="text-2xl font-bold text-gray-800 text-left mb-5">
-                  Sign in
-                </h2>
-                <form onSubmit={signIn} action="" className="w-full">
-                  <div id="input" className="flex flex-col w-full my-5">
-                    <label htmlFor="username" className="text-gray-500 mb-2">
-                      Email
-                    </label>
-                    <input
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      type="email"
-                      id="username"
-                      placeholder="Please insert your email"
-                      className="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
-                    />
-                  </div>
-                  <div id="input" className="flex flex-col w-full my-5">
-                    <label htmlFor="password" className="text-gray-500 mb-2">
-                      Password
-                    </label>
-                    <input
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      type="password"
-                      id="password"
-                      placeholder="Please insert your password"
-                      className="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
-                    />
-                  </div>
-                  <div id="button" className="flex flex-col w-full my-5">
-                    <button
-                      type="submit"
-                      className="w-full py-4 bg-green-600 rounded-lg text-green-100"
-                    >
-                      <div className="flex flex-row items-center justify-center">
-                        <div className="mr-2">
-                          <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                            ></path>
-                          </svg>
-                        </div>
-                        <div className="font-bold">Sign in</div>
-                      </div>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
-      </body>
-    </div>
+      </div>
+      <Footer />
+    </section>
   );
 }

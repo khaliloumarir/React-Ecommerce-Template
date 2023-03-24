@@ -20,7 +20,11 @@ import Blog from "./routes/Blog";
 import DogPattern from "./routes/DogPattern";
 import { ErrorPage } from "./routes/ErrorPage";
 import SignIn from "./routes/Signin";
-import VideosPage from "./components/VideosPage";
+import VideosPage from "./routes/VideosPage";
+import Video from "./routes/Video";
+import RequireAuth from "./auth/RequireAuth";
+import { AuthContextProvider } from "./auth/AuthContext";
+import LeaveOnAuth from "./auth/LeaveOnAuth";
 
 const router = createBrowserRouter([
   {
@@ -143,23 +147,37 @@ const router = createBrowserRouter([
       </ScrollToTop>
     ),
   },
-  // {
-  //   path: "sign-in",
-  //   element: (
-  //     <ScrollToTop>
-  //       <SignIn />
-  //     </ScrollToTop>
-  //   ),
-  // },
+  {
+    path: "sign-in",
+    element: (
+      <LeaveOnAuth>
+        <ScrollToTop>
+          <SignIn />
+        </ScrollToTop>
+      </LeaveOnAuth>
+    ),
+  },
 
-  // {
-  //   path: "videos",
-  //   element: (
-  //     <ScrollToTop>
-  //       <VideosPage />
-  //     </ScrollToTop>
-  //   ),
-  // },
+  {
+    path: "asteria-videos",
+    element: (
+      <RequireAuth>
+        <ScrollToTop>
+          <VideosPage />
+        </ScrollToTop>
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "asteria-video/:id/:name",
+    element: (
+      <RequireAuth>
+        <ScrollToTop>
+          <Video />
+        </ScrollToTop>
+      </RequireAuth>
+    ),
+  },
   {
     path: "*",
     element: (
@@ -176,6 +194,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
   </React.StrictMode>
 );

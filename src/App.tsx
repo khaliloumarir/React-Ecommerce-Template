@@ -14,26 +14,9 @@ import MainArgument from "./components/product-description-components/MainArgume
 import RightArgument from "./components/product-description-components/RightArgument";
 import video1 from "./assets/videos/opopop_480x480.mp4";
 import video2 from "./assets/videos/700kib_480x480.mp4";
-import { asteriaAndUltiaDownload } from "./data/downloadData";
+import { asteriaAndUltiaAndWashclothDownload } from "./data/downloadData";
 
 function App() {
-  // const [seconds, setSeconds] = useState(0);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     const currentTimestamp = Math.floor(Date.now() / 1000);
-  //     const targetTimestamp = Math.floor(
-  //       new Date("2023-01-15").getTime() / 1000
-  //     );
-  //     setSeconds(targetTimestamp - currentTimestamp);
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, []);
-  // const days = Math.floor(seconds / 86400);
-  // const hours = Math.floor((seconds % 86400) / 3600);
-  // const minutes = Math.floor((seconds % 3600) / 60);
-  // const remainingSeconds = seconds % 60;
-
   const argumentOne: { title: string; description: string }[] = [
     {
       title: "Knits",
@@ -55,22 +38,15 @@ function App() {
     <div className=" space-y-20">
       {/* Includes all the body details, this is where the user lands in */}
       <Header />
-      {/* <div className="text-center bg-red-600 py-8">
-        <p className="text-4xl text-white">
-          Buy Asteria & Get Foliage for Free.
-        </p>
-        <p className="text-white underline">
-          Offer Ends in {days} days, {hours} hours, {minutes} minutes,{" "}
-          {remainingSeconds} seconds left
-        </p>
-      </div> */}
+
       <section className="sm:px-8 px-4">
         <ProductBody
-          downloadFile={asteriaAndUltiaDownload}
+          downloadFile={asteriaAndUltiaAndWashclothDownload}
           productImage={asteriaAndUltia}
           reviews={asteriaReviews}
           // productImages={[img6, img2, img3, img4, img5]}
-          productTitle="Asteria Crochet Pattern PDF + Ultia Pattern Gifted"
+          productTitle="Asteria Crochet Pattern PDF + Ulita and Washcloth Pattern Gifted"
+          deal={true}
           priceToCompare={9.99}
           productPrice={5.99}
           productDescription="the Asteria pattern is a very beautiful and easy crochet pattern. that will serve not as just a cute gift or as a pleasant decoration for your home. but as family heirloom to give to be cherished by your kids and there kids to come!"

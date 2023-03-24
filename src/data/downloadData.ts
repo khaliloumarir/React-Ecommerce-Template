@@ -35,6 +35,11 @@ const asteriaAndUltiaDownload: downloadDate = {
   downloadName: "Marion Wares Asteria And Ultia Pattern",
   type: "zip",
 };
+const asteriaAndUltiaAndWashclothDownload: downloadDate = {
+  productName: "Asteria, Ultia And Washcloth crochet",
+  downloadName: "Marion Wares Asteria and Ulita and Washcloth",
+  type: "zip",
+};
 
 export {
   fernandaDownload,
@@ -44,4 +49,5 @@ export {
   bundleDownload,
   asteriaDeal,
   asteriaAndUltiaDownload,
+  asteriaAndUltiaAndWashclothDownload,
 };
