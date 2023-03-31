@@ -79,20 +79,20 @@ export default function ProductBody({
     };
   }, [reviewBubble]);
   const [seconds, setSeconds] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const currentTimestamp = Math.floor(Date.now() / 1000);
-      const targetTimestamp = Math.floor(
-        new Date("2023-04-01").getTime() / 1000
-      );
-      setSeconds(targetTimestamp - currentTimestamp);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-  const days = Math.floor(seconds / 86400);
-  const hours = Math.floor((seconds % 86400) / 3600);
-  const minutes = Math.floor((seconds % 3600) / 60);
-  const remainingSeconds = seconds % 60;
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const currentTimestamp = Math.floor(Date.now() / 1000);
+  //     const targetTimestamp = Math.floor(
+  //       new Date("2023-04-01").getTime() / 1000
+  //     );
+  //     setSeconds(targetTimestamp - currentTimestamp);
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
+  // const days = Math.floor(seconds / 86400);
+  // const hours = Math.floor((seconds % 86400) / 3600);
+  // const minutes = Math.floor((seconds % 3600) / 60);
+  // const remainingSeconds = seconds % 60;
   //AUasW91YfQIZDvWONOkRjMBFR99cR9F9lqK1mbHnstD_RIMUhT4_K2csZ2SxNta4dsEmXn7I9rQ3bpfQ
   //AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon
   const initialOptions = {
@@ -122,19 +122,19 @@ export default function ProductBody({
       <div className="sm:basis-1/2 sm:space-y-6 space-y-2">
         <h1 className="text-4xl font-bold text-header ">{productTitle}</h1>
         <section>
-          {/* <p className="line-through text-[#8A0000]">{priceToCompare}$</p> */}
-          {deal && (
+          <p className="line-through text-[#8A0000]">{priceToCompare}$</p>
+          {/* {deal && (
             <p className="text-[#8A0000]">
               {days} day, {hours} hours, {minutes} minutes, {remainingSeconds}{" "}
               seconds left
             </p>
-          )}
+          )} */}
 
           {/* <p className="text-[#8A0000] font-medium">
             Sale could End any minute! Get your PDF Now before it is too late
           </p> */}
           <p className="text-greenColor font-bold">
-            {productPrice}$ - In stock (115 Sold)
+            {productPrice}$ - In stock (121 Sold)
           </p>
         </section>
 

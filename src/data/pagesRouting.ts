@@ -3,14 +3,14 @@ const pagesRouting: { url: string; destination: string }[] = [
     url: "/",
     destination: "Asteria",
   },
-  // {
-  //   url: "/asteria-videos",
-  //   destination: "Videos",
-  // },
   {
-    url: "/crochet-dog-sweater-pattern",
-    destination: "Dog Pattern",
+    url: "/asteria-videos",
+    destination: "Videos",
   },
+  // {
+  //   url: "/crochet-dog-sweater-pattern",
+  //   destination: "Dog Pattern",
+  // },
   {
     url: "/fernanda",
     destination: "Fernanda",

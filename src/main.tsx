@@ -14,10 +14,10 @@ import Lorien from "./routes/Lorien";
 import Fernanda from "./routes/Fernanda";
 import Bundle from "./routes/Bundle";
 import ScrollToTop from "./components/ScrollToTop";
-import Patterns from "./routes/Patterns";
-import Mermaid from "./routes/Mermaid";
+// import Patterns from "./routes/Patterns";
+// import Mermaid from "./routes/Mermaid";
 import Blog from "./routes/Blog";
-import DogPattern from "./routes/DogPattern";
+// import DogPattern from "./routes/DogPattern";
 import { ErrorPage } from "./routes/ErrorPage";
 import SignIn from "./routes/Signin";
 import VideosPage from "./routes/VideosPage";
@@ -99,22 +99,22 @@ const router = createBrowserRouter([
       </ScrollToTop>
     ),
   },
-  {
-    path: "patterns",
-    element: (
-      <ScrollToTop>
-        <Patterns />
-      </ScrollToTop>
-    ),
-  },
-  {
-    path: "merbabies",
-    element: (
-      <ScrollToTop>
-        <Mermaid />
-      </ScrollToTop>
-    ),
-  },
+  // {
+  //   path: "patterns",
+  //   element: (
+  //     <ScrollToTop>
+  //       <Patterns />
+  //     </ScrollToTop>
+  //   ),
+  // },
+  // {
+  //   path: "merbabies",
+  //   element: (
+  //     <ScrollToTop>
+  //       <Mermaid />
+  //     </ScrollToTop>
+  //   ),
+  // },
   {
     path: "contact-us",
     element: (
@@ -139,14 +139,14 @@ const router = createBrowserRouter([
       </ScrollToTop>
     ),
   },
-  {
-    path: "crochet-dog-sweater-pattern",
-    element: (
-      <ScrollToTop>
-        <DogPattern />
-      </ScrollToTop>
-    ),
-  },
+  // {
+  //   path: "crochet-dog-sweater-pattern",
+  //   element: (
+  //     <ScrollToTop>
+  //       <DogPattern />
+  //     </ScrollToTop>
+  //   ),
+  // },
   {
     path: "sign-in",
     element: (

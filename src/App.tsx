@@ -3,7 +3,7 @@ import ProductBody from "./components/ProductBody";
 import ProductDescription from "./components/ProductDescription";
 import { asteriaReviews } from "./data/reviews";
 // import asteriaBook from "./assets/images/asteria-book.webp";
-import asteriaAndUltia from "./assets/images/Asteria+Ulita.webp";
+import asteriaBookCover from "./assets/images/asteria-book.webp";
 import img1 from "./assets/images/arg-list-1.webp";
 import img2 from "./assets/images/arg-list-2.webp";
 import img3 from "./assets/images/arg-list-3.webp";
@@ -14,7 +14,7 @@ import MainArgument from "./components/product-description-components/MainArgume
 import RightArgument from "./components/product-description-components/RightArgument";
 import video1 from "./assets/videos/opopop_480x480.mp4";
 import video2 from "./assets/videos/700kib_480x480.mp4";
-import { asteriaAndUltiaAndWashclothDownload } from "./data/downloadData";
+import { asteriaDownload } from "./data/downloadData";
 
 function App() {
   const argumentOne: { title: string; description: string }[] = [
@@ -41,14 +41,14 @@ function App() {
 
       <section className="sm:px-8 px-4">
         <ProductBody
-          downloadFile={asteriaAndUltiaAndWashclothDownload}
-          productImage={asteriaAndUltia}
+          downloadFile={asteriaDownload}
+          productImage={asteriaBookCover}
           reviews={asteriaReviews}
           // productImages={[img6, img2, img3, img4, img5]}
-          productTitle="Asteria Crochet Pattern PDF + Ulita and Washcloth Pattern Gifted"
+          productTitle="Asteria Crochet Pattern PDF"
           deal={true}
           priceToCompare={9.99}
-          productPrice={5.99}
+          productPrice={6.99}
           productDescription="the Asteria pattern is a very beautiful and easy crochet pattern. that will serve not as just a cute gift or as a pleasant decoration for your home. but as family heirloom to give to be cherished by your kids and there kids to come!"
         />
         <ProductDescription
