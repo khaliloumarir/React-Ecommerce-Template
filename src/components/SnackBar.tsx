@@ -1,7 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
-import bundle from "../assets/images/Book-Bundle-1.webp";
+import bundle from "../assets/images/bundle-deal.webp";
 import { Link } from "react-router-dom";
 export interface State extends SnackbarOrigin {
   open: boolean;
@@ -49,7 +49,10 @@ export default function PositionedSnackbar({
       onClose={handleClose}
       key={"bottom" + "center"}
     >
-      <Alert onClose={handleClose} severity="info" sx={{ width: "100%" }}>
+      <Alert
+        onClose={handleClose}
+        sx={{ width: "100%", backgroundColor: "#01456A" }}
+      >
         <Link to="/bundle">
           <div className="flex items-center ">
             <img
@@ -60,7 +63,7 @@ export default function PositionedSnackbar({
               height={65}
               src={bundle}
             />
-            <p className="text-sm text-white">4 patterns for 12.99$</p>
+            <p className="text-sm text-white ">4 patterns for 12.99$</p>
           </div>
         </Link>
       </Alert>

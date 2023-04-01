@@ -31,9 +31,7 @@ export default function Video() {
                 </Link>
               </li>
               <li>
-                <span className="mx-2 text-neutral-500 dark:text-neutral-400">
-                  /
-                </span>
+                <span className="mx-2 text-neutral-500 ">/</span>
               </li>
               <li className="text-neutral-700 ">{name}</li>
             </ol>
@@ -47,7 +45,7 @@ export default function Video() {
           <li role="presentation">
             <a
               href="#tabs-home"
-              className="my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-greenColor data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-greenColor dark:data-[te-nav-active]:text-greenColor bg-grey-400 "
+              className="my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-greenColor data-[te-nav-active]:text-primary  "
               data-te-toggle="pill"
               data-te-target="#tabs-home"
               data-te-nav-active
@@ -62,7 +60,7 @@ export default function Video() {
           <li role="presentation">
             <a
               href="#tabs-contact"
-              className="disabled pointer-events-none my-2 block border-x-0 border-t-0 border-b-2 border-transparent bg-transparent px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-400 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent dark:text-neutral-600"
+              className="disabled pointer-events-none my-2 block border-x-0 border-t-0 border-b-2 border-transparent bg-transparent px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-400 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent "
               data-te-toggle="pill"
               data-te-target="#tabs-contact"
               role="tab"

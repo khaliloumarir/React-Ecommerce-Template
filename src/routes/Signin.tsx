@@ -7,10 +7,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { mainData } from "../data/mainData";
 import { UserAuth } from "../auth/AuthContext";
+import Alert from "@mui/material/Alert";
 export default function SignIn() {
   const { signIn } = UserAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [authUser, setAuthUser]: any = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
@@ -28,12 +30,27 @@ export default function SignIn() {
   }, []);
   const signInForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await signIn(email, password);
-    window.location.reload();
+    try {
+      const result = await signIn(email, password);
+      setError("");
+      window.location.reload();
+    } catch (error: any) {
+      console.log(error.code);
+      if (error.code == "auth/user-not-found") {
+        setError(
+          "You do not have an account with us, please BUY A PDF to automatically have one"
+        );
+      } else if (error.code == "auth/wrong-password") {
+        setError(
+          "Password is wrong, please use your first name and last name as password"
+        );
+      }
+    }
   };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <Header />
+
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <Link className="py-4" to="/">
           <img
@@ -45,16 +62,17 @@ export default function SignIn() {
             src={logo}
           />
         </Link>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            {error.length ? <Alert severity="error">{error}</Alert> : null}
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
               Sign in to your account
             </h1>
             <form onSubmit={signInForm} className="space-y-4 md:space-y-6">
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   Your email
                 </label>
@@ -64,14 +82,14 @@ export default function SignIn() {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                   placeholder="Email associated to your paypal"
                 />
               </div>
               <div>
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   Password
                 </label>
@@ -82,24 +100,24 @@ export default function SignIn() {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full text-white bg-greenColor hover:bg-greenColor focus:ring-4 focus:outline-none focus:ring-greenColor font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-greenColor dark:hover:bg-greenColor dark:focus:ring-greenColor"
+                className="w-full text-white bg-greenColor hover:bg-greenColor focus:ring-4 focus:outline-none focus:ring-greenColor font-medium rounded-lg text-sm px-5 py-2.5 text-center "
               >
                 Sign in
               </button>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+              <p className="text-sm font-light text-gray-500 ">
                 Don’t have an account yet?{" "}
-                <a
-                  href="#"
-                  className="font-medium text-greenColor hover:underline dark:text-greenColor"
+                <Link
+                  to="/"
+                  className="font-medium text-greenColor hover:underline "
                 >
                   Buy PDF And Join automatically!
-                </a>
+                </Link>
               </p>
             </form>
           </div>

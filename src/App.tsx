@@ -4,6 +4,7 @@ import ProductDescription from "./components/ProductDescription";
 import { asteriaReviews } from "./data/reviews";
 // import asteriaBook from "./assets/images/asteria-book.webp";
 import asteriaBookCover from "./assets/images/asteria-book.webp";
+import asteriaBookCoverSmall from "./assets/images/asteria-book-small.webp";
 import img1 from "./assets/images/arg-list-1.webp";
 import img2 from "./assets/images/arg-list-2.webp";
 import img3 from "./assets/images/arg-list-3.webp";
@@ -43,6 +44,7 @@ function App() {
         <ProductBody
           downloadFile={asteriaDownload}
           productImage={asteriaBookCover}
+          productSmallImage={asteriaBookCoverSmall}
           reviews={asteriaReviews}
           // productImages={[img6, img2, img3, img4, img5]}
           productTitle="Asteria Crochet Pattern PDF"

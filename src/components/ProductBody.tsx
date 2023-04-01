@@ -25,9 +25,11 @@ export default function ProductBody({
   productImage,
   downloadFile,
   productImages,
+  productSmallImage,
   deal,
 }: {
   productTitle: string;
+  productSmallImage?: string;
   priceToCompare: number;
   productPrice: number;
   productDescription: string;
@@ -57,10 +59,8 @@ export default function ProductBody({
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === "/bundle") {
-      console.log("Route is /bundle");
       setOpenBundle(false);
     } else {
-      console.log("Route is not /bundle");
       setOpenBundle(true);
     }
   }, [location]);
@@ -78,7 +78,7 @@ export default function ProductBody({
       resetTimeout();
     };
   }, [reviewBubble]);
-  const [seconds, setSeconds] = useState(0);
+  // const [seconds, setSeconds] = useState(0);
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     const currentTimestamp = Math.floor(Date.now() / 1000);
@@ -110,14 +110,23 @@ export default function ProductBody({
       </Helmet>
       {/* Product Details */}
       <div>
-        <img
-          loading="lazy"
-          className="sm:basis-1/2"
-          src={productImage}
-          width={500}
-          height={388}
-          alt="book cover"
-        />
+        {productSmallImage ? (
+          <img
+            className="sm:basis-1/2"
+            srcSet={`${productSmallImage} 640w, ${productImage} 1024w`}
+            width={500}
+            height={388}
+            alt="book cover"
+          />
+        ) : (
+          <img
+            className="sm:basis-1/2"
+            src={productImage}
+            width={500}
+            height={388}
+            alt="book cover"
+          />
+        )}
       </div>
       <div className="sm:basis-1/2 sm:space-y-6 space-y-2">
         <h1 className="text-4xl font-bold text-header ">{productTitle}</h1>

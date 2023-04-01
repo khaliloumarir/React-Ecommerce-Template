@@ -9,7 +9,7 @@ import PrivacyPolicy from "./routes/PrivacyPolicy";
 import TermsOfService from "./routes/TermsOfService";
 import ContactUs from "./routes/ContactUs";
 import ConfirmationPage from "./routes/ConfirmationPage";
-import Foliage from "./routes/Foliage";
+// import Foliage from "./routes/Foliage";
 import Lorien from "./routes/Lorien";
 import Fernanda from "./routes/Fernanda";
 import Bundle from "./routes/Bundle";
@@ -35,14 +35,14 @@ const router = createBrowserRouter([
       </ScrollToTop>
     ),
   },
-  {
-    path: "/foliage",
-    element: (
-      <ScrollToTop>
-        <Foliage />
-      </ScrollToTop>
-    ),
-  },
+  // {
+  //   path: "/foliage",
+  //   element: (
+  //     <ScrollToTop>
+  //       <Foliage />
+  //     </ScrollToTop>
+  //   ),
+  // },
   {
     path: "/lorien",
     element: (
