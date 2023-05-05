@@ -15,7 +15,7 @@ import MainArgument from "./components/product-description-components/MainArgume
 import RightArgument from "./components/product-description-components/RightArgument";
 import video1 from "./assets/videos/opopop_480x480.mp4";
 import video2 from "./assets/videos/700kib_480x480.mp4";
-import { asteriaDownload } from "./data/downloadData";
+import { downloads } from "./data/downloadData";
 
 function App() {
   const argumentOne: { title: string; description: string }[] = [
@@ -42,7 +42,10 @@ function App() {
 
       <section className="sm:px-8 px-4">
         <ProductBody
-          downloadFile={asteriaDownload}
+          downloadFile={"cb93191c-b4c9-414d-915e-f246b4d42ed1"}
+          paymentUrl={
+            downloads["cb93191c-b4c9-414d-915e-f246b4d42ed1"].paymentUrl
+          }
           productImage={asteriaBookCover}
           productSmallImage={asteriaBookCoverSmall}
           reviews={asteriaReviews}

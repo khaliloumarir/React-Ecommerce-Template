@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "marionwarescrochet"
-  }
+    "default": "marionwarescrochet",
+    "testing-stage": "crochettest-3ac45",
+    "production": "marionwarescrochet"
+  },
+  "targets": {}
 }

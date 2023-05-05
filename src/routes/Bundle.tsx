@@ -6,7 +6,7 @@ import { asteriaReviews } from "../data/reviews";
 import img1 from "../assets/images/arg-list-2.webp";
 import img2 from "../assets/images/Lorien-2.webp";
 import img3 from "../assets/images/Foliage-3.webp";
-import { bundleDownload } from "../data/downloadData";
+import { bundleDownload, downloads } from "../data/downloadData";
 
 export default function Bundle() {
   return (
@@ -20,7 +20,10 @@ export default function Bundle() {
       </div> */}
       <section className="sm:px-8">
         <ProductBody
-          downloadFile={bundleDownload}
+          downloadFile={"df04759b-5080-4488-b6a5-8a55d2f395cf"}
+          paymentUrl={
+            downloads["df04759b-5080-4488-b6a5-8a55d2f395cf"].paymentUrl
+          }
           productImage={lorienBook}
           reviews={asteriaReviews}
           productTitle="Crochet Pattern Bundle"

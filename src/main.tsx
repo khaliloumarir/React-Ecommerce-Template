@@ -124,7 +124,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "confirmation/:product/:downloadName/:type",
+    path: ":uuid",
     element: (
       <ScrollToTop>
         <ConfirmationPage />

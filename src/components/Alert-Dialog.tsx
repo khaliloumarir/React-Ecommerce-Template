@@ -58,19 +58,21 @@ export default function AlertDialogSlide({
               </div>
               <div>
                 <p className="font-bold">Thank you for your purchase</p>
-                <p className="text-sm"> Purchase has been successful</p>
+                <p className="text-sm">
+                  Your account to access the videos will be created in the
+                  upcoming 24 hours
+                </p>
               </div>
             </div>
           </div>
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            We will email you the PDF in less than 24 Hours! So make sure you
-            check your emails.
-          </DialogContentText>
-        </DialogContent>
+        {/* <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description"></DialogContentText>
+        </DialogContent> */}
         <DialogActions>
-          <Button onClick={handleClose}>Okay</Button>
+          <Button variant="contained" onClick={handleClose}>
+            Okay
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

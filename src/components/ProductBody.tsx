@@ -24,6 +24,7 @@ export default function ProductBody({
   reviews,
   productImage,
   downloadFile,
+  paymentUrl,
   productImages,
   productSmallImage,
   deal,
@@ -35,9 +36,10 @@ export default function ProductBody({
   productDescription: string;
   reviews: review[];
   productImage: string;
-  downloadFile: downloadDate;
+  downloadFile: string;
   productImages?: string[];
   deal?: boolean;
+  paymentUrl?: string;
 }) {
   const [showPaypal, setShowPaypal]: [
     boolean,
@@ -64,11 +66,12 @@ export default function ProductBody({
       setOpenBundle(true);
     }
   }, [location]);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowPaypal(true);
-    }, 3000);
-  }, []);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowPaypal(true);
+  //   }, 3000);
+  // }, []);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
@@ -97,7 +100,7 @@ export default function ProductBody({
   //AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon
   const initialOptions = {
     "client-id":
-      "AS5Yyek_YeG8f9c_nsqQZ2uYyjyHGJJyUUcPrjHUdPavOMAdTP7ajGvFDqMb7FJTDFkdbtG60sSUuFon",
+      "AUasW91YfQIZDvWONOkRjMBFR99cR9F9lqK1mbHnstD_RIMUhT4_K2csZ2SxNta4dsEmXn7I9rQ3bpfQ",
     currency: "USD",
     intent: "capture",
   };
@@ -148,24 +151,37 @@ export default function ProductBody({
         </section>
 
         <p>{productDescription}</p>
-        <div className="min-h-[180px] ">
+        {/* className={`${!showPaypal && "grid grid-cols-2 gap-6"} min-h-[100px]`} */}
+        <div className="min-h-[100px] flex flex-col ">
           {showPaypal == false ? (
-            // <button
-            //   onClick={() => {
-            //     setShowPaypal(!showPaypal);
-            //   }}
-            //   className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold"
-            // >
-            //   Buy {productTitle} for {productPrice}$
-            // </button>
+            // https://buy.stripe.com/test_eVa161fYK9501IA000
+            //https://buy.stripe.com/6oE29Hfeu23E2buaEE
+            <>
+              <a
+                href={paymentUrl}
+                className="bg-[#223628] drop-shadow-md text-[#FFFFFF] flex justify-center py-[14px] px-[40px] items-center  rounded-[3px] font-bold"
+              >
+                Buy Now
+              </a>
+              {/* <button
+                onClick={() => {
+                  setShowPaypal(!showPaypal);
+                }}
+                className="text-[#223628] border-2 border-greenColor py-[14px] px-[40px] rounded-sm font-bold"
+              >
+                Buy with Paypal
+              </button> */}
+            </>
+          ) : null}
+          {/* {showPaypal == false ? (
             <div className="flex justify-center ">
               <img className="animate-spin" width="48px" src={spinner} />
             </div>
-          ) : null}
+          ) : null} */}
 
           {/* ShowPaypal if set to true, then deferLoading is set to False to load Paypal SDK */}
           {/*  */}
-          <PayPalScriptProvider
+          {/* <PayPalScriptProvider
             deferLoading={!showPaypal}
             options={initialOptions}
           >
@@ -193,14 +209,12 @@ export default function ProductBody({
                     details.payer.email_address,
                     password
                   );
-                  navigate(
-                    `/confirmation/${downloadFile.productName}/${downloadFile.downloadName}/${downloadFile.type}`
-                  );
+                  navigate(`/confirmation/${downloadFile}`);
                 });
               }}
               style={{ layout: "vertical" }}
             />
-          </PayPalScriptProvider>
+          </PayPalScriptProvider> */}
         </div>
         <ReviewBubble review={reviews[reviewBubble]} />
 

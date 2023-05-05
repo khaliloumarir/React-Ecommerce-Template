@@ -34,7 +34,7 @@ export default function Lorien() {
       <Header />
       <section className="sm:px-8">
         <ProductBody
-          downloadFile={lorienDownload}
+          downloadFile={"1ed3dc63-f20d-4aa2-b39c-0839f988b7d6"}
           productImage={lorienBook}
           reviews={lorienReviews}
           productTitle="Lorien Crochet Pattern PDF"

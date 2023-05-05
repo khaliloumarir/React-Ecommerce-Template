@@ -38,11 +38,11 @@ export default function SignIn() {
       console.log(error.code);
       if (error.code == "auth/user-not-found") {
         setError(
-          "You do not have an account with us, please BUY A PDF to automatically have one"
+          "You do not have an account with us, please BUY A PDF and wait up to 24 hours"
         );
       } else if (error.code == "auth/wrong-password") {
         setError(
-          "Password is wrong, please use your first name and last name as password"
+          "Password is wrong, please use your first name and last name as password or contact us for help"
         );
       }
     }

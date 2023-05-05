@@ -34,7 +34,7 @@ export default function Foliage() {
       <Header />
       <section className="sm:px-8">
         <ProductBody
-          downloadFile={foliageDownload}
+          downloadFile={"3dcea280-9264-475d-8112-02da87a43d40"}
           productImage={foliageBook}
           reviews={foliageReviews}
           productTitle="Foliage Crochet Pattern PDF"

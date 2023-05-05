@@ -8,5 +8,9 @@ interface downloadDate {
   productName: string;
   downloadName: string;
   type: string;
+  paymentUrl?: string;
 }
-export type { review, downloadDate };
+interface Downloads {
+  [key: string]: downloadDate;
+}
+export type { review, downloadDate, Downloads };
