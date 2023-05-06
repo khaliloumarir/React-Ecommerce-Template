@@ -10,7 +10,7 @@ import MainArgument from "../components/product-description-components/MainArgum
 import RightArgument from "../components/product-description-components/RightArgument";
 import lorienMain from "../assets/images/Lorien-main.webp";
 import lorienMain2 from "../assets/images/Lorien-main-2.webp";
-import { lorienDownload } from "../data/downloadData";
+import { lorienDownload, downloads } from "../data/downloadData";
 export default function Lorien() {
   const argumentOne: { title: string; description: string }[] = [
     {
@@ -35,6 +35,9 @@ export default function Lorien() {
       <section className="sm:px-8">
         <ProductBody
           downloadFile={"1ed3dc63-f20d-4aa2-b39c-0839f988b7d6"}
+          paymentUrl={
+            downloads["1ed3dc63-f20d-4aa2-b39c-0839f988b7d6"].paymentUrl
+          }
           productImage={lorienBook}
           reviews={lorienReviews}
           productTitle="Lorien Crochet Pattern PDF"

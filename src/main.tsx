@@ -169,7 +169,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "asteria-video/:id/:name",
+    path: "asteria-video/:id",
     element: (
       <RequireAuth>
         <ScrollToTop>

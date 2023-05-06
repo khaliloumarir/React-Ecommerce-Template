@@ -3,6 +3,7 @@ const fernandaDownload: downloadDate = {
   productName: "Fernanda",
   downloadName: "Marion Wares - Fernanda pattern",
   type: "pdf",
+  paymentUrl: "https://buy.stripe.com/dR64hP4zQbEe2bu4gi",
 };
 const asteriaDownload: downloadDate = {
   productName: "Asteria",
@@ -19,6 +20,7 @@ const lorienDownload: downloadDate = {
   productName: "Lorien",
   downloadName: "Marion Wares - Lorien pattern",
   type: "pdf",
+  paymentUrl: "https://buy.stripe.com/aEU7u1aYe7nY5nGeUX",
 };
 const bundleDownload: downloadDate = {
   productName: "Crochet Bundle",

@@ -1,10 +1,12 @@
-const videos = [
+import { CrochetPattern } from "../interfaces";
+const videos: CrochetPattern[] = [
   {
     id: 0,
     name: "Part 1 - Asteria crochet pattern",
     href: "/asteria-video/HX0lduqAz5s",
     imageSrc: "https://i.postimg.cc/FF80rcsb/1.png",
     imageAlt: "Part 1 - Asteria crochet pattern",
+    english: true,
   },
   {
     id: 1,
@@ -12,13 +14,15 @@ const videos = [
     href: "/asteria-video/Ts1kYczDs4g",
     imageSrc: "https://i.postimg.cc/NfXm5M53/2.png",
     imageAlt: "Part 2 - Asteria crochet pattern",
+    english: true,
   },
   {
     id: 2,
     name: "Part 3 - Asteria crochet pattern",
-    href: "/asteria-video/ds7updgVy5s",
+    href: "/asteria-video/ID7jtNEcmQY",
     imageSrc: "https://i.postimg.cc/XY0FFb5p/3.png",
     imageAlt: "Part 3 - Asteria crochet pattern",
+    english: true,
   },
   {
     id: 3,

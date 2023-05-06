@@ -13,4 +13,12 @@ interface downloadDate {
 interface Downloads {
   [key: string]: downloadDate;
 }
-export type { review, downloadDate, Downloads };
+interface CrochetPattern {
+  id: number;
+  name: string;
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+  english?: boolean;
+}
+export type { review, downloadDate, Downloads, CrochetPattern };

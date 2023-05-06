@@ -10,7 +10,7 @@ import MainArgument from "../components/product-description-components/MainArgum
 import RightArgument from "../components/product-description-components/RightArgument";
 import fernandaMain from "../assets/images/fernanda-main.webp";
 import fernandaMain2 from "../assets/images/fernanda-main-2.webp";
-import { fernandaDownload } from "../data/downloadData";
+import { fernandaDownload, downloads } from "../data/downloadData";
 export default function Fernanda() {
   const argumentOne: { title: string; description: string }[] = [
     {
@@ -35,6 +35,9 @@ export default function Fernanda() {
       <section className="sm:px-8">
         <ProductBody
           downloadFile={"595246ff-fc12-4108-890f-dfb16fa2389b"}
+          paymentUrl={
+            downloads["595246ff-fc12-4108-890f-dfb16fa2389b"].paymentUrl
+          }
           productImage={lorienBook}
           reviews={fernandaReviews}
           productTitle="Fernanda Crochet Pattern PDF"
