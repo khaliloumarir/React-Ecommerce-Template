@@ -5,10 +5,21 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebase-config";
 
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function ConfirmationPage() {
   let { product, downloadName, type } = useParams();
-
+  const [downloadUrl, setDownloadUrl] = useState<string>("");
+  useEffect(() => {
+    const pdfRef = ref(storage, `${downloadName}.${type}`);
+    getDownloadURL(pdfRef)
+      .then((url) => {
+        //Open the url in a new window
+        setDownloadUrl(url);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <>
       <Header />
@@ -19,22 +30,12 @@ export default function ConfirmationPage() {
             Thank you for your purchase, Please press the download button for
             the download to start
           </p>
-          <button
-            onClick={() => {
-              const pdfRef = ref(storage, `${downloadName}.${type}`);
-              getDownloadURL(pdfRef)
-                .then((url) => {
-                  //Open the url in a new window
-                  window.location.href = url;
-                })
-                .catch((err) => {
-                  console.log(err);
-                });
-            }}
+          <a
+            href={downloadUrl}
             className="bg-[#223628] text-[#FFFFFF] py-[14px] px-[40px] rounded-full font-bold self-start"
           >
             Download {product} Crochet Pattern
-          </button>
+          </a>
           <span className="text-md max-w-[500px]">
             Please Contact us at{" "}
             <b className="text-blue-600">sellaprod.contact@gmail.com</b> if you

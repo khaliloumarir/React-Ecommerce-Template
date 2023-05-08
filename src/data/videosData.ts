@@ -16,7 +16,7 @@ const videos = [
   {
     id: 2,
     name: "Part 3 - Asteria crochet pattern",
-    href: "/asteria-video/ds7updgVy5s",
+    href: "/asteria-video/ID7jtNEcmQY",
     imageSrc: "https://i.postimg.cc/XY0FFb5p/3.png",
     imageAlt: "Part 3 - Asteria crochet pattern",
   },

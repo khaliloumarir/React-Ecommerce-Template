@@ -37,7 +37,7 @@ export default function Fernanda() {
           downloadFile={fernandaDownload}
           productImage={lorienBook}
           reviews={fernandaReviews}
-          productTitle="Lorien Crochet Pattern PDF"
+          productTitle="Fernanda Crochet Pattern PDF"
           priceToCompare={12.99}
           productPrice={6.99}
           productDescription="The Lorien crochet pattern is a must have in every home & is an easy crochet pattern. Lorien Crochet is a decoration for tables, on top of the dressers & is a breath-taking pattern for you or your dear who loves to knit  "
