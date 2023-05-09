@@ -44,7 +44,7 @@ function App() {
         <ProductBody
           downloadFile={"cb93191c-b4c9-414d-915e-f246b4d42ed1"}
           paymentUrl={
-            downloads["cb93191c-b4c9-414d-915e-f246b4d42ed1"].paymentUrl
+            "https://mwares.gumroad.com/l/asteria-crochet-pattern"
           }
           productImage={asteriaBookCover}
           productSmallImage={asteriaBookCoverSmall}
