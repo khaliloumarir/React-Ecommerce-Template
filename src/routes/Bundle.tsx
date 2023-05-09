@@ -22,7 +22,7 @@ export default function Bundle() {
         <ProductBody
           downloadFile={"df04759b-5080-4488-b6a5-8a55d2f395cf"}
           paymentUrl={
-            "https://mwares.gumroad.com/l/hihkh"
+            "https://mwares.gumroad.com/l/CrochetPatternBundle"
           }
           productImage={lorienBook}
           reviews={asteriaReviews}
