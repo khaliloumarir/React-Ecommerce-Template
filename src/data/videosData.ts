@@ -27,9 +27,10 @@ const videos: CrochetPattern[] = [
   {
     id: 3,
     name: "Part 4 - Asteria crochet pattern",
-    href: "/asteria-video/QxwwGhpq6Jo",
+    href: "/asteria-video/yXNreDXz4nw",
     imageSrc: "https://i.postimg.cc/XYc5kzKx/4.png",
     imageAlt: "Part 4 - Asteria crochet pattern",
+    english: true,
   },
   {
     id: 4,
