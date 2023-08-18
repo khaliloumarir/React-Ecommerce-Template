@@ -50,7 +50,7 @@ function App() {
           productSmallImage={asteriaBookCoverSmall}
           reviews={asteriaReviews}
           // productImages={[img6, img2, img3, img4, img5]}
-          productTitle="Asteria Crochet Pattern PDF"
+          productTitle="Marionwares Asteria crochet pattern pdf"
           deal={true}
           priceToCompare={9.99}
           productPrice={6.99}
