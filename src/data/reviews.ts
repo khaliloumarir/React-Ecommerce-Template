@@ -38,35 +38,36 @@ import { review } from "../interfaces";
 const asteriaReviews: review[] = [
   {
     userName: "Ana Walford",
-    reviewMessage: "Great pattern, easy to follow and end result was lovely",
+    reviewMessage:
+      "I'm new to crocheting, but I decided to give the Asteria crochet pattern a try, and I'm so glad I did! Even for someone like me, the instructions were straightforward and easy to follow. The end result is beautiful, and I'm really satisfied with it. This design is ideal for crocheters of all skill levels!",
     image: asteria_one,
     pdtImg: asteria_img_review_1,
   },
   {
     userName: "Caitlyn Jones",
     reviewMessage:
-      "I absolutely love Asteria’s patterns. They are so well-written and utterly beautiful.",
+      "As a seasoned crocheter, I'm always on the lookout for new and interesting patterns. The Asteria crochet pattern caught my attention and did not let me down. The design is intricate and appealing. The pattern is well-written, with detailed instructions and helpful advice. I had a terrific time working on this project, and the end result is fantastic!",
     image: asteria_two,
     pdtImg: asteria_img_review_2,
   },
   {
     userName: "Maria Fernanda",
     reviewMessage:
-      "Beautiful pattern! Easy to follow and works up fairly quickly.",
+      "I've bought my fair share of crochet patterns, but the Asteria crochet pattern PDF is truly unique. The instructions are quite detailed, making them suited for crocheters of all ability levels. The pattern is adaptable, allowing for customization while retaining its beauty. Working on this project was a delight, and I'm quite satisfied with the results.",
     image: asteria_three,
     pdtImg: "",
   },
   {
     userName: "Rosenda Williams",
     reviewMessage:
-      "Just what I needed! Easy to follow pattern, with detailed instructions.... very nice!! Not the first time I've ordered from here, always pleased!",
+      "I bought the Asteria crochet pattern PDF and I'm very pleased with the results. The pattern is well-thought-out and well-designed, taking you through each step with clarity. The finished result has an excellent blend of elegance and texture. I admire the attention to detail in the pattern as well as the final design. This pattern is a must-have for experienced crocheters.",
     image: asteria_four,
     pdtImg: "",
   },
   {
     userName: "Vienna Creech",
     reviewMessage:
-      "It’s so easy to follow and I had really fun when I was crocheting ❣️ absolutely beautiful thank you!",
+      "The Asteria crochet pattern PDF is a work of art! The directions are simple to follow, and the pattern itself is enjoyable to work on. The finished product is a lovely crochet item that I can't wait to show off. Look no farther if you want a design that is both enjoyable to make and visually appealing.",
     image: asteria_five,
     pdtImg: asteria_img_review_3,
   },

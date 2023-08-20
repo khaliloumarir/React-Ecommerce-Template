@@ -15,12 +15,14 @@ import ImportantSection from "./product-description-components/ImportantSection"
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 export default function ProductDescription({
+  productTitle,
   reviews,
   img1,
   img2,
   img3,
   children,
 }: {
+  productTitle?: string;
   reviews: review[];
   img1: string;
   img2: string;
@@ -36,19 +38,19 @@ export default function ProductDescription({
       icon: purchaseIcon,
       title: "Purchase",
       description:
-        "Once the payment is confirmed you will be redirected to the download page",
+        "After your payment has been verified, you will be sent to the download page.",
     },
     {
       icon: downloadIcon,
-      title: "Download PDF",
+      title: "Download the PDF",
       description:
-        "You will be redirected to the Download Page where you can download the PDF immediately",
+        "You will be routed to the Download Page, where you can directly download the PDF.",
     },
     {
       icon: crochetingIcon,
-      title: "Start Crocheting",
+      title: "Begin Crocheting",
       description:
-        "Open the pdf & start crocheting beautiful doilys for your home with our in depth step-by-step guide",
+        "Open the pdf and begin crocheting gorgeous doilies for your house using our detailed step-by-step instructions.",
     },
   ];
 
@@ -56,10 +58,12 @@ export default function ProductDescription({
     <div className="flex flex-col justify-center items-center text-center  ">
       <section className=" bg-gradient-to-b from-[#f6f8fc] to-[#FFFFFF] w-full flex flex-col items-center py-16 space-y-16 ">
         <section>
-          <h2 className="">Look at our clients Results</h2>
+          <h2 className="">
+            Why Choose Our {productTitle ?? "Crochet patterns"}:
+          </h2>
           <p className="max-w-[760px] text-center ">
-            These are some of the pictures that our clients have took after they
-            followed the instructions in the book!
+            These are some of the photos taken by our clients after following
+            the directions in the book!
           </p>
         </section>
 
@@ -94,8 +98,8 @@ export default function ProductDescription({
       {/* Reviews Section */}
       <div className="space-y-10 py-16">
         <section>
-          <h1>Our Pattern Reviews</h1>
-          <p>See what our readers are saying.</p>
+          <h1>Pattern Evaluations</h1>
+          <p>Check out what our readers are saying.</p>
         </section>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 place-content-center gap-10 ">
           {reviews.map((review) => {
@@ -121,43 +125,43 @@ export default function ProductDescription({
           <div className="flex flex-col items-center">
             <img
               loading="lazy"
-              alt="reliable team"
+              alt="Team that is Dependable and Creative"
               width="60px"
               height="60px"
               src={reliableTeamIcon}
             />
-            <h3>Reliable & Creative Team</h3>
+            <h3>Team that is Dependable and Creative</h3>
             <p>
-              We make detailed books with a creative view to offer the best
-              experience and instructions to our customers
+              We create thorough books with a creative eye in order to provide
+              our clients with the finest experience and guidance possible.
             </p>
           </div>
           <div className="flex flex-col items-center">
             <img
               loading="lazy"
-              alt="great customer support"
+              alt="24/7 Customer Service"
               width="60px"
               height="60px"
               src={customerSupportIcon}
             />
-            <h3>24/7 Customer Support</h3>
+            <h3>24/7 Customer Service</h3>
             <p>
-              Our friendly team is here to help & answer any questions you may
-              have
+              Customer Service is available around the clock. Our friendly team
+              is here to help and answer any questions you may have.
             </p>
           </div>
           <div className="flex flex-col items-center">
             <img
               loading="lazy"
-              alt="Satisfaction is guaranteed"
+              alt="Guaranteed Customer Satisfaction"
               width="60px"
               height="60px"
               src={satisfactionIcon}
             />
-            <h3>Satisfaction Guaranteed</h3>
+            <h3>Guaranteed Customer Satisfaction</h3>
             <p>
-              We stand by our high quality products & your satisfaction is
-              guaranteed
+              We stand behind our high-quality items and guarantee your
+              pleasure.
             </p>
           </div>
         </section>
@@ -177,22 +181,22 @@ export default function ProductDescription({
                 <p>
                   <img
                     loading="lazy"
-                    alt="video tutorials"
+                    alt="instructional videos"
                     className="inline-block"
                     src={checkIcon}
                   />{" "}
-                  Videos tutorials
+                  Instructional videos
                 </p>
               </li>
               <li>
                 <p>
                   <img
                     loading="lazy"
-                    alt="Step-By-Step Instructions"
+                    alt="Instructions in Steps"
                     className="inline-block"
                     src={checkIcon}
                   />{" "}
-                  Step-By-Step Instructions
+                  Instructions in Steps
                 </p>
               </li>
               <li>
@@ -203,7 +207,7 @@ export default function ProductDescription({
                     className="inline-block"
                     src={checkIcon}
                   />{" "}
-                  PDF Asteria pattern
+                  Asteria crochet pattern PDF
                 </p>
               </li>
               <li>
@@ -214,7 +218,7 @@ export default function ProductDescription({
                     className="inline-block"
                     src={checkIcon}
                   />{" "}
-                  PDF Foliage Pattern
+                  Foliage crochet Pattern PDF
                 </p>
               </li>
               <li>
@@ -225,7 +229,7 @@ export default function ProductDescription({
                     className="inline-block"
                     src={checkIcon}
                   />{" "}
-                  PDF Lorien Pattern
+                  Lorien Crochet Pattern PDF
                 </p>
               </li>
               <li>
@@ -236,7 +240,7 @@ export default function ProductDescription({
                     className="inline-block"
                     src={checkIcon}
                   />{" "}
-                  PDF Fernanda Pattern
+                  Fernanda Crochet Pattern PDF
                 </p>
               </li>
             </ul>

@@ -43,20 +43,24 @@ function App() {
       <section className="sm:px-8 px-4">
         <ProductBody
           downloadFile={"cb93191c-b4c9-414d-915e-f246b4d42ed1"}
-          paymentUrl={
-            "https://mwares.gumroad.com/l/asteria-crochet-pattern"
-          }
+          paymentUrl={"https://mwares.gumroad.com/l/asteria-crochet-pattern"}
           productImage={asteriaBookCover}
           productSmallImage={asteriaBookCoverSmall}
           reviews={asteriaReviews}
           // productImages={[img6, img2, img3, img4, img5]}
-          productTitle="Marionwares Asteria crochet pattern pdf"
+          productTitle="Asteria Crochet Pattern MarionWares"
           deal={true}
           priceToCompare={9.99}
           productPrice={6.99}
-          productDescription="the Asteria pattern is a very beautiful and easy crochet pattern. that will serve not as just a cute gift or as a pleasant decoration for your home. but as family heirloom to give to be cherished by your kids and there kids to come!"
+          productDescription="Asteria Crochet Pattern – a masterpiece that combines elegance and creativity. Our
+          Asteria Crochet Pattern is meant to inspire and assist you through the crafting process,
+          whether you're an expert crocheter or a novice eager to learn.
+          Are you passionate about crochet and looking for an exquisite and unique project? Look
+          no further! At MarionWares, we're delighted to present this exclusive
+          "
         />
         <ProductDescription
+          productTitle="Asteria Crochet Pattern"
           reviews={asteriaReviews}
           img1={img1}
           img2={img2}
@@ -66,12 +70,14 @@ function App() {
             <MainArgument
               title="Create beautiful shapes without needing a machine or years of
           experience!"
-              paragraph="Are you thinking of taking crochet as a hobby? but you´re too
-        intimidated by the complex patterns that you see on the internet? with
-        this Step by step guide you´ll find yourself creating patterns of a
-        professional level! We will be going step by step through this cute
-        crochet pattern with clear instructions that will teach you
-        the basics of this stunning pattern!"
+              paragraph="The Asteria Crochet Pattern has a one-of-a-kind and intriguing pattern with
+              complex intricacies and lovely motifs. It includes extensive step-by-step tutorials
+              that accommodate different learning speeds. Visual learners will benefit from
+              high-quality video tutorials that accompany the pattern and clearly demonstrate
+              each technique. It is appropriate for all skill levels, from beginners to skilled
+              crocheters. After purchase, the pattern is instantly available as a PDF download,
+              allowing for quick crafting without shipping delays.
+              "
             >
               <video className="" autoPlay loop muted playsInline>
                 <source src={video1} type="video/mp4" />

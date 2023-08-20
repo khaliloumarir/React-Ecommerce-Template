@@ -8,8 +8,8 @@ export default function ImportantSection({
       <div>
         <h1>Important!</h1>
         <p>
-          You will Be redirected To the Download Page immediately after your
-          purchase is confirmed.
+          You will be sent to the Download Page after your purchase has been
+          verified.
         </p>
       </div>
       <a href="#" className="grid sm:grid-cols-3 gap-y-4">

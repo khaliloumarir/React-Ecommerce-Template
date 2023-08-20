@@ -21,17 +21,22 @@ export default function Bundle() {
       <section className="sm:px-8">
         <ProductBody
           downloadFile={"df04759b-5080-4488-b6a5-8a55d2f395cf"}
-          paymentUrl={
-            "https://mwares.gumroad.com/l/CrochetPatternBundle"
-          }
+          paymentUrl={"https://mwares.gumroad.com/l/CrochetPatternBundle"}
           productImage={lorienBook}
           reviews={asteriaReviews}
           productTitle="Crochet Pattern Bundle"
           priceToCompare={26.99}
           productPrice={12.99}
-          productDescription="The Asteria, Foliage, Lorien, Fernanda, pattern is a very beautiful and easy crochet patterns. that will serve not as just a cute gift or as a pleasant decoration for your home. but as family heirloom to give to be cherished by your kids and there kids to come!"
+          productDescription="With our premium crochet patterns, Asteria, Foliage, Fernanda, and Lorien, you may let your
+          imagination go wild. Each pattern, from cosmic wonders to nature's grace and elven charm, is
+          brought to life through step-by-step video instructions. Whether you're a novice or an
+          experienced crocheter, our patterns and tutorials will help you create gorgeous creations that
+          represent your individual flair. Enhance your crochet crafts now with Asteria, Foliage, Fernanda,
+          and Lorien.
+          "
         />
         <ProductDescription
+          productTitle="Crochet Pattern Bundle"
           reviews={asteriaReviews}
           img1={img1}
           img2={img2}
